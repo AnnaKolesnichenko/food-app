@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Link, NavLink } from "react-router-dom";
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const Container = styled.div`
   height: 100vh;
@@ -22,7 +22,7 @@ export const StyledLink = styled(NavLink)`
   border: none;
   font-size: 28px;
   font-weight: bold;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   color: #fefae3;
   text-decoration: none;
   text-align: center;

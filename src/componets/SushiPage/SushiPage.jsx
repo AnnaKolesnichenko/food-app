@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
-import Select from "react-select";
+import React, { useEffect } from 'react';
+import { useState } from 'react';
+import Select from 'react-select';
 //import sushiBg from "../../data/assets/asian.jpeg";
-import { ASIAN_DISH } from "../../data/asian";
-import FoodItem from "./FoodItem";
-import { ListItems, Container, Selected } from "./SushiPage.styled";
-import { options, regions } from "../../data/options";
-import Loader from "../Loader/Loader";
+import { ASIAN_DISH } from '../../data/asian';
+import FoodItem from './FoodItem';
+import { ListItems, Container, Selected } from './SushiPage.styled';
+import { options, regions } from '../../data/options';
+//import Loader from "../Loader/Loader";
 
 const SushiPage = () => {
   const [selected, setSelected] = useState(null);
@@ -16,7 +16,7 @@ const SushiPage = () => {
 
   useEffect(() => {
     let selectedItems = ASIAN_DISH;
-    if (selected && selected.value === "All") {
+    if (selected && selected.value === 'All') {
       setItemsFiltered(ASIAN_DISH);
       return;
     }
@@ -26,13 +26,13 @@ const SushiPage = () => {
     // );
 
     if (selected) {
-      selectedItems = selectedItems.filter((item) =>
+      selectedItems = selectedItems.filter(item =>
         item.characteristic.includes(selected.value)
       );
     }
 
     if (region) {
-      selectedItems = selectedItems.filter((item) =>
+      selectedItems = selectedItems.filter(item =>
         item.cuisine.includes(region.value)
       );
     }
@@ -40,47 +40,47 @@ const SushiPage = () => {
     setItemsFiltered(selectedItems);
   }, [selected, region]);
 
-  const handleSelectChange = (option) => {
+  const handleSelectChange = option => {
     setSelected(option);
   };
 
-  const handleRegionChange = (option) => {
+  const handleRegionChange = option => {
     setRegion(option);
   };
 
   const customStyledSelect = {
     control: (provided, state) => ({
       ...provided,
-      width: "240px",
-      marginLeft: "auto",
-      marginRight: "auto",
-      marginTop: "50px",
-      backgroundColor: "#D5CFC7",
-      borderRadius: "15px",
-      color: "#1C180A",
-      fontFamily: "Raleway, sans-serif",
+      width: '240px',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      marginTop: '50px',
+      backgroundColor: '#D5CFC7',
+      borderRadius: '15px',
+      color: '#1C180A',
+      fontFamily: 'Raleway, sans-serif',
 
-      "&:hover": {
-        border: "1px solid #24485b", // Change border color on hover
+      '&:hover': {
+        border: '1px solid #24485b', // Change border color on hover
       },
     }),
 
     menu: (provided, state) => ({
       ...provided,
-      fontFamily: "Raleway, sans-serif",
-      backgroundColor: "#f2f2f2",
-      borderRadius: "4px",
-      boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+      fontFamily: 'Raleway, sans-serif',
+      backgroundColor: '#f2f2f2',
+      borderRadius: '4px',
+      boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
     }),
     option: (provided, state) => ({
       ...provided,
-      fontFamily: "Raleway, sans-serif",
-      backgroundColor: state.isSelected ? "#e37f19" : "transparent",
-      color: state.isSelected ? "#ffffff" : "#333333",
-      "&:hover": {
-        backgroundColor: "transparent",
-        color: "#e37f19",
-        fontSize: "20px",
+      fontFamily: 'Raleway, sans-serif',
+      backgroundColor: state.isSelected ? '#e37f19' : 'transparent',
+      color: state.isSelected ? '#ffffff' : '#333333',
+      '&:hover': {
+        backgroundColor: 'transparent',
+        color: '#e37f19',
+        fontSize: '20px',
       },
     }),
   };
@@ -127,7 +127,7 @@ const SushiPage = () => {
       /> */}
       {/* <button onClick={handleFilteredItems}>Choose</button> */}
       <ListItems>
-        {itemsFiltered.map((item) => (
+        {itemsFiltered.map(item => (
           <FoodItem key={item.id} item={item} />
         ))}
       </ListItems>
