@@ -6,6 +6,7 @@ import { ASIAN_DISH } from '../../data/asian';
 import FoodItem from './FoodItem';
 import { ListItems, Container, Selected } from './SushiPage.styled';
 import { options, regions } from '../../data/options';
+import { motion } from 'framer-motion';
 //import Loader from "../Loader/Loader";
 
 const SushiPage = () => {
@@ -126,7 +127,7 @@ const SushiPage = () => {
         styles={customStyledSelect}
       /> */}
       {/* <button onClick={handleFilteredItems}>Choose</button> */}
-      <ListItems>
+      <ListItems as={motion.ul}>
         {itemsFiltered.map(item => (
           <FoodItem key={item.id} item={item} />
         ))}

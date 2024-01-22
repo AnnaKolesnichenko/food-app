@@ -1,9 +1,12 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Backdrop = styled.div`
   position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   top: 0;
   left: 0;
   /* margin: auto; */
@@ -14,10 +17,11 @@ export const Backdrop = styled.div`
 `;
 
 export const Modal = styled.div`
-  position: absolute;
+  /* position: fixed; */
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  /* left: 50%;
+  transform: translate(-50%, -50%); */
+
   width: 450px;
   background: #fff;
   display: flex;
@@ -25,5 +29,5 @@ export const Modal = styled.div`
   padding: 20px;
   border-radius: 4px;
   z-index: 100;
-  transition: opacity 250ms ease-in-out;
+  //transition: opacity 250ms ease-in-out;
 `;

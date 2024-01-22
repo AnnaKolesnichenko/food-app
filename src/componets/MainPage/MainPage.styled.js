@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 export const Container = styled.div`
   height: 100vh;
@@ -16,7 +17,7 @@ export const LinkContainer = styled.ul`
   gap: 120px;
 `;
 
-export const StyledLink = styled(NavLink)`
+export const StyledLink = styled(motion(NavLink))`
   padding: 20px 0;
   width: 200px;
   border: none;

@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Container, LinkContainer, StyledLink } from './MainPage.styled';
 import Background from '../../data/assets/re2.jpeg';
+import { motion } from 'framer-motion';
 
 const MainPage = () => {
   return (
@@ -19,9 +20,33 @@ const MainPage = () => {
       }}
     >
       <LinkContainer>
-        <StyledLink to="/sushi">asian food</StyledLink>
-        <StyledLink to="/pizza">fast food</StyledLink>
-        <StyledLink to="/salads">simple food</StyledLink>
+        <StyledLink
+          // as={motion.NavLink}
+          //animate={{ y: 30 }}
+          whileHover={{ y: -20 }}
+          transition={{ duration: 3, type: 'spring', bounce: 0.7 }}
+          to="/sushi"
+        >
+          asian food
+        </StyledLink>
+        <StyledLink
+          // as={motion.NavLink}
+          //animate={{ y: 30 }}
+          whileHover={{ y: -20 }}
+          transition={{ duration: 3, type: 'spring', bounce: 0.7 }}
+          to="/pizza"
+        >
+          fast food
+        </StyledLink>
+        <StyledLink
+          // as={motion.NavLink}
+          //animate={{ y: 30 }}
+          whileHover={{ y: -20 }}
+          transition={{ duration: 3, type: 'spring', bounce: 0.7 }}
+          to="/salads"
+        >
+          simple food
+        </StyledLink>
       </LinkContainer>
     </Container>
   );

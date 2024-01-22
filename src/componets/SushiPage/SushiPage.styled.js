@@ -13,8 +13,8 @@ export const ListItems = styled.ul`
   margin-right: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 20px;
+  justify-content: center;
+  gap: 10px;
 `;
 
 export const Item = styled.li`
