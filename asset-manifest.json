@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/food-app/static/css/main.c99ab29b.css",
-    "main.js": "/food-app/static/js/main.6d98b21a.js",
+    "main.js": "/food-app/static/js/main.b84eca56.js",
     "static/media/Beef_stir.jpg": "/food-app/static/media/Beef_stir.059e808e8ab858a46408.jpg",
     "static/media/ground-turkey-stir-fry-recipe_jpeg": "/food-app/static/media/ground-turkey-stir-fry-recipe_2c018df3966aff7e9d5669c2ea0b2162.163f333c81d814085f47.jpeg",
     "static/media/pancit-bihon.jpg": "/food-app/static/media/pancit-bihon.b622baef426ad5b3a954.jpg",
@@ -62,10 +62,10 @@
     "static/media/re2.jpeg": "/food-app/static/media/re2.7e66071e94fc072a8b9d.jpeg",
     "index.html": "/food-app/index.html",
     "main.c99ab29b.css.map": "/food-app/static/css/main.c99ab29b.css.map",
-    "main.6d98b21a.js.map": "/food-app/static/js/main.6d98b21a.js.map"
+    "main.b84eca56.js.map": "/food-app/static/js/main.b84eca56.js.map"
   },
   "entrypoints": [
     "static/css/main.c99ab29b.css",
-    "static/js/main.6d98b21a.js"
+    "static/js/main.b84eca56.js"
   ]
 }
