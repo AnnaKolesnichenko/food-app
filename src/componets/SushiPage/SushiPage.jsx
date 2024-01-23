@@ -127,7 +127,16 @@ const SushiPage = () => {
         styles={customStyledSelect}
       /> */}
       {/* <button onClick={handleFilteredItems}>Choose</button> */}
-      <ListItems as={motion.ul}>
+      <ListItems
+        as={motion.ul}
+        initial="hidden"
+        animate="visible"
+        variants={{
+          visible: {
+            transition: { staggerChildren: 0.05 },
+          },
+        }}
+      >
         {itemsFiltered.map(item => (
           <FoodItem key={item.id} item={item} />
         ))}

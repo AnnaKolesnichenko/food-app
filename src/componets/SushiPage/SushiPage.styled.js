@@ -84,7 +84,7 @@ export const Price = styled.p`
 `;
 
 export const Button = styled.button`
-  width: 70%;
+  width: 40%;
   margin-top: 10px;
   border: none;
   padding: 10px 7px;

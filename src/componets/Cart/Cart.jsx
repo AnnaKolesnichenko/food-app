@@ -30,9 +30,13 @@ const Cart = ({ handleCloseButton, handleCheckOutOpen }) => {
     <Backdrop>
       <Modal
         as={motion.div}
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 50 }}
+        variants={{
+          hidden: { opacity: 0, y: 50 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
         transition={{ duration: 0.3, type: 'spring', bounce: 0.4 }}
         style={{
           backgroundImage: `url(${bg})`,

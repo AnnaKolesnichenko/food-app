@@ -12,7 +12,7 @@ import { CartContext } from '../../store/cart-context';
 import CheckOut from '../CheckoutPage/CheckOut';
 import OrderAccepted from '../UI/OrderAccepted';
 
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const HeaderComponent = () => {
   const [cartOpen, setCartOpen] = useState(false);
@@ -69,7 +69,14 @@ const HeaderComponent = () => {
         <StyledNavLinkMenu to="/sushi">asian food</StyledNavLinkMenu>
         <StyledNavLinkMenu to="/pizza">fast food</StyledNavLinkMenu>
         <StyledNavLinkMenu to="/salads">simple food</StyledNavLinkMenu>{' '}
-        <Button onClick={handleCartOpen}>Cart ({cartCnxt.items.length})</Button>
+        <Button
+          as={motion.button}
+          whileHover={{ scale: 1.1 }}
+          transition={{ type: 'spring', stiffness: 500 }}
+          onClick={handleCartOpen}
+        >
+          Cart ({cartCnxt.items.length})
+        </Button>
       </Header>
     </NavigationContainer>
   );
