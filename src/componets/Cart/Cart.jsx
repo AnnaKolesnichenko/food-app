@@ -8,7 +8,6 @@ import bg from '../../data/assets/b.jpeg';
 import CartItems from '../CartItems/CartItems';
 
 import { motion } from 'framer-motion';
-import { AnimatePresence } from 'framer-motion';
 
 const Cart = ({ handleCloseButton, handleCheckOutOpen }) => {
   const shopCnxt = useContext(CartContext);

@@ -2,7 +2,6 @@ import React from 'react';
 
 import { Container, LinkContainer, StyledLink } from './MainPage.styled';
 import Background from '../../data/assets/re2.jpeg';
-import { motion } from 'framer-motion';
 
 const MainPage = () => {
   return (
