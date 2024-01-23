@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
 import {
-  Button,
   Item,
   Price,
   StyledImage,
@@ -8,12 +7,13 @@ import {
   StyledStar,
   Title,
 } from './SushiPage.styled';
+import { Button } from 'componets/UI/CommonStyles.styled';
 
 import { CartContext } from '../../store/cart-context';
 
 import { motion } from 'framer-motion';
 
-const FoodItem = ({ item }) => {
+const FoodItem = ({ item, handleOpenModal }) => {
   const cartCnxt = useContext(CartContext);
   const [isLiked, setIsLiked] = useState(false);
 
@@ -69,7 +69,7 @@ const FoodItem = ({ item }) => {
             transition={{ type: 'spring', stiffness: 500 }}
             type="button"
             onClick={() => {
-              cartCnxt.addItemToCart(item.id);
+              handleOpenModal(item.id);
             }}
           >
             About

@@ -83,30 +83,6 @@ export const Price = styled.p`
   border-radius: 7px;
 `;
 
-export const Button = styled.button`
-  width: 40%;
-  margin-top: 10px;
-  border: none;
-  padding: 10px 7px;
-  border-radius: 7px;
-  font-size: 12 4px;
-  font-family: 'Raleway', sans-serif;
-  font-weight: bold;
-  letter-spacing: 1px;
-  background-color: #d5cfc7;
-  color: #3a2a21;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #e37f19;
-    color: #d5cfc7;
-    /* color: #d5cfc7;
-    background-color: #3a2a21; */
-    /* #3A2A21
-    #D5CFC7 */
-  }
-`;
-
 export const StyledStar = styled(AiOutlineHeart).attrs(props => ({
   style: {
     position: 'absolute',

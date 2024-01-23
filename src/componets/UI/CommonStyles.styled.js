@@ -22,7 +22,7 @@ export const Modal = styled.div`
   /* left: 50%;
   transform: translate(-50%, -50%); */
 
-  width: 450px;
+  width: 550px;
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -30,4 +30,28 @@ export const Modal = styled.div`
   border-radius: 4px;
   z-index: 100;
   //transition: opacity 250ms ease-in-out;
+`;
+
+export const Button = styled.button`
+  //width: 40%;
+  margin-top: 5px;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 7px;
+  font-size: 12 4px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background-color: #d5cfc7;
+  color: #3a2a21;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #e37f19;
+    color: #d5cfc7;
+    /* color: #d5cfc7;
+    background-color: #3a2a21; */
+    /* #3A2A21
+    #D5CFC7 */
+  }
 `;

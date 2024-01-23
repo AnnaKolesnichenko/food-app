@@ -7,13 +7,14 @@ import FoodItem from './FoodItem';
 import { ListItems, Container, Selected } from './SushiPage.styled';
 import { options, regions } from '../../data/options';
 import { motion } from 'framer-motion';
+import ModalAbout from 'componets/ModalAbout/ModalAbout';
 //import Loader from "../Loader/Loader";
 
 const SushiPage = () => {
   const [selected, setSelected] = useState(null);
   const [region, setRegion] = useState(null);
   const [itemsFiltered, setItemsFiltered] = useState(ASIAN_DISH);
-  //const [loading, setLoading] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(false);
 
   useEffect(() => {
     let selectedItems = ASIAN_DISH;
@@ -47,6 +48,14 @@ const SushiPage = () => {
 
   const handleRegionChange = option => {
     setRegion(option);
+  };
+
+  const handleOpenModal = id => {
+    setSelectedItem(id);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedItem(null);
   };
 
   const customStyledSelect = {
@@ -88,6 +97,9 @@ const SushiPage = () => {
 
   return (
     <Container>
+      {selectedItem && (
+        <ModalAbout id={selectedItem} handleCloseModal={handleCloseModal} />
+      )}
       <Selected>
         <Select
           isClearable
@@ -138,7 +150,11 @@ const SushiPage = () => {
         }}
       >
         {itemsFiltered.map(item => (
-          <FoodItem key={item.id} item={item} />
+          <FoodItem
+            key={item.id}
+            item={item}
+            handleOpenModal={handleOpenModal}
+          />
         ))}
       </ListItems>
     </Container>
