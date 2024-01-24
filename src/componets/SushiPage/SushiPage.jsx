@@ -6,7 +6,7 @@ import { ASIAN_DISH } from '../../data/asian';
 import FoodItem from './FoodItem';
 import { ListItems, Container, Selected } from './SushiPage.styled';
 import { options, regions } from '../../data/options';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import ModalAbout from 'componets/ModalAbout/ModalAbout';
 //import Loader from "../Loader/Loader";
 
@@ -97,9 +97,11 @@ const SushiPage = () => {
 
   return (
     <Container>
-      {selectedItem && (
-        <ModalAbout id={selectedItem} handleCloseModal={handleCloseModal} />
-      )}
+      <AnimatePresence>
+        {selectedItem && (
+          <ModalAbout id={selectedItem} handleCloseModal={handleCloseModal} />
+        )}
+      </AnimatePresence>
       <Selected>
         <Select
           isClearable

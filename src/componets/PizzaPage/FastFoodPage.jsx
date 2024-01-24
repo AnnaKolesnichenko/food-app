@@ -6,6 +6,7 @@ import FastFoodItem from './FastFoodItem.jsx';
 
 import { cuisines, characteristics } from '../../data/options.js';
 import ModalAbout from 'componets/ModalAbout/ModalAbout.jsx';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const FastFoodPage = () => {
   const [selectedCuisine, setSelectedCuisine] = useState(null);
@@ -85,9 +86,11 @@ const FastFoodPage = () => {
   };
   return (
     <Container>
-      {selectedItem && (
-        <ModalAbout id={selectedItem} handleCloseModal={handleCloseModal} />
-      )}
+      <AnimatePresence>
+        {selectedItem && (
+          <ModalAbout id={selectedItem} handleCloseModal={handleCloseModal} />
+        )}
+      </AnimatePresence>
       {itemsFiltered.length === 0 && <p>there are no items picked</p>}
 
       <StyledSelects>
@@ -140,7 +143,16 @@ const FastFoodPage = () => {
         placeholder="Pick A Taste....."
         styles={customStyledSelect}
       /> */}
-      <ListItems>
+      <ListItems
+        as={motion.ul}
+        initial="hidden"
+        animate="visible"
+        variants={{
+          visible: {
+            transition: { staggerChildren: 0.05 },
+          },
+        }}
+      >
         {itemsFiltered.map(item => (
           <FastFoodItem
             key={item.id}

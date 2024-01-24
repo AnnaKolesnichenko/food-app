@@ -13,23 +13,36 @@ import { motion } from 'framer-motion';
 
 const FastFoodItem = ({ item, handleOpenModal }) => {
   const cartCnxt = useContext(CartContext);
-  const [isLiked, setIsLiked] = useState(false);
+  const { handleLiked, likedItems } = cartCnxt;
+  console.log(likedItems);
 
-  const handleLiked = () => {
-    setIsLiked(!isLiked);
-  };
+  // const [isLiked, setIsLiked] = useState(false);
+
+  // const handleLiked = () => {
+  //   setIsLiked(!isLiked);
+  // };
 
   return (
-    <Item style={{ position: 'relative' }}>
+    <Item
+      as={motion.li}
+      variants={{
+        hidden: { opacity: 0, scale: 0.9 },
+        visible: { opacity: 1, scale: 1 },
+      }}
+      style={{ position: 'relative' }}
+    >
       <StyledImage
         src={item.image}
         alt={item.name}
-        opacity={isLiked ? '0.5' : '1'}
+        // opacity={isLiked ? '0.5' : '1'}
       />
       <StyledStar
-        fillColor={isLiked ? 'pink' : 'brown'}
-        strokeColor={isLiked ? 'white' : 'green'}
-        onClick={handleLiked}
+        // fillColor={isLiked ? 'pink' : 'brown'}
+        // strokeColor={isLiked ? 'white' : 'green'}
+        onClick={() => {
+          handleLiked(item.id);
+          console.log(item.id);
+        }}
       />
       <StyledInfo>
         <Title>{item.title}</Title>

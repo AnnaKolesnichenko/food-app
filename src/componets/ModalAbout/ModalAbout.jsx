@@ -20,6 +20,7 @@ import { ASIAN_DISH } from 'data/asian';
 import bg from '../../data/assets/b.jpeg';
 import { CartContext } from 'store/cart-context';
 import { FastFood } from 'data/available-meals';
+import { motion } from 'framer-motion';
 
 const ModalAbout = ({ id, handleCloseModal }) => {
   const context = useContext(CartContext);
@@ -39,6 +40,11 @@ const ModalAbout = ({ id, handleCloseModal }) => {
           backgroundPosition: 'center',
           backgroundSize: 'cover',
         }}
+        as={motion.div}
+        initial={{ y: 50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: 50, opacity: 0 }}
+        transition={{ duration: 0.7, type: 'spring', bounce: 0.4 }}
       >
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <ImageDescription>
