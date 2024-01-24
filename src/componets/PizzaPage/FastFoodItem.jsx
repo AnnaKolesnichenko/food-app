@@ -14,7 +14,7 @@ import { motion } from 'framer-motion';
 const FastFoodItem = ({ item, handleOpenModal }) => {
   const cartCnxt = useContext(CartContext);
   const { handleLiked, likedItems } = cartCnxt;
-  console.log(likedItems);
+  //console.log(likedItems);
 
   // const [isLiked, setIsLiked] = useState(false);
 
@@ -34,11 +34,11 @@ const FastFoodItem = ({ item, handleOpenModal }) => {
       <StyledImage
         src={item.image}
         alt={item.name}
-        // opacity={isLiked ? '0.5' : '1'}
+        opacity={likedItems[item.id] ? '0.5' : '1'}
       />
       <StyledStar
-        // fillColor={isLiked ? 'pink' : 'brown'}
-        // strokeColor={isLiked ? 'white' : 'green'}
+        fillColor={likedItems[item.id] ? 'pink' : 'brown'}
+        strokeColor={likedItems[item.id] ? 'white' : 'green'}
         onClick={() => {
           handleLiked(item.id);
           console.log(item.id);
