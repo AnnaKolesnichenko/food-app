@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import { CartContext } from '../../store/cart-context';
 import {
   Item,
@@ -14,13 +14,8 @@ import { motion } from 'framer-motion';
 const FastFoodItem = ({ item, handleOpenModal }) => {
   const cartCnxt = useContext(CartContext);
   const { handleLiked, likedItems } = cartCnxt;
-  //console.log(likedItems);
 
-  // const [isLiked, setIsLiked] = useState(false);
-
-  // const handleLiked = () => {
-  //   setIsLiked(!isLiked);
-  // };
+  const included = likedItems.map(likedItem => likedItem.id).includes(item.id);
 
   return (
     <Item
@@ -34,14 +29,13 @@ const FastFoodItem = ({ item, handleOpenModal }) => {
       <StyledImage
         src={item.image}
         alt={item.name}
-        opacity={likedItems[item.id] ? '0.5' : '1'}
+        opacity={included ? '0.5' : '1'}
       />
       <StyledStar
-        fillColor={likedItems[item.id] ? 'pink' : 'brown'}
-        strokeColor={likedItems[item.id] ? 'white' : 'green'}
+        fillColor={included ? 'pink' : 'brown'}
+        strokeColor={included ? 'white' : 'green'}
         onClick={() => {
           handleLiked(item.id);
-          console.log(item.id);
         }}
       />
       <StyledInfo>

@@ -4,16 +4,16 @@ import { FastFood } from '../data/available-meals';
 
 export const CartContext = createContext({
   items: [],
-  liked: {},
+  liked: [],
   addItemToCart: () => {},
   removeItem: () => {},
   likeItem: () => {},
-  unlikeItem: () => {},
 });
 
 export default function CartContextProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
-  const [likedItems, setLikedItems] = useState(false);
+  const [likedItems, setLikedItems] = useState([]);
+  console.log(likedItems);
 
   // const addItemToCart = (id) => {
   //   const existingItem = cartItems.find((item) => item.id === id);
@@ -31,7 +31,19 @@ export default function CartContextProvider({ children }) {
   // };
 
   const handleLiked = id => {
-    setLikedItems(likedState => ({ ...likedState, [id]: !likedState[id] }));
+    const product =
+      ASIAN_DISH.find(item => item.id === id) ||
+      FastFood.find(item => item.id === id);
+
+    if (product) {
+      setLikedItems(prevState => {
+        if (prevState.some(likedItem => likedItem.id === id)) {
+          return prevState.filter(likedItem => likedItem.id !== id);
+        } else {
+          return [...prevState, product];
+        }
+      });
+    }
   };
 
   const addItemToCart = id => {

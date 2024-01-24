@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import {
   Item,
   Price,
@@ -8,18 +8,14 @@ import {
   Title,
 } from './SushiPage.styled';
 import { Button } from 'componets/UI/CommonStyles.styled';
-
 import { CartContext } from '../../store/cart-context';
-
 import { motion } from 'framer-motion';
 
 const FoodItem = ({ item, handleOpenModal }) => {
   const cartCnxt = useContext(CartContext);
-  const [isLiked, setIsLiked] = useState(false);
+  const { likedItems, handleLiked } = cartCnxt;
 
-  const handleLiked = () => {
-    setIsLiked(!isLiked);
-  };
+  const included = likedItems.map(liked => liked.id).includes(item.id);
 
   return (
     <Item
@@ -33,13 +29,12 @@ const FoodItem = ({ item, handleOpenModal }) => {
       <StyledImage
         src={item.image}
         alt={item.title}
-        opacity={isLiked ? '0.5' : '1'}
+        opacity={included ? '0.5' : '1'}
       />
-      {/* <FaRegStar style={{ position: "absolute", top: "10px", right: "10px" }} /> */}
       <StyledStar
-        fillColor={isLiked ? 'pink' : 'brown'}
-        strokeColor={isLiked ? 'white' : 'green'}
-        onClick={handleLiked}
+        fillColor={included ? 'pink' : 'brown'}
+        strokeColor={included ? 'white' : 'green'}
+        onClick={() => handleLiked(item.id)}
       />
       <StyledInfo>
         <Title>{item.title}</Title>
