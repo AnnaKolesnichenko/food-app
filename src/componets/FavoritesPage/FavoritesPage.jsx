@@ -1,11 +1,8 @@
 import React, { useContext } from 'react';
 import { CartContext } from 'store/cart-context';
-import {
-  Container,
-  FavoritesImage,
-  FavoritesLiItem,
-  FavoritesList,
-} from './FavoritesPage.styled';
+import { Container, FavoritesList } from './FavoritesPage.styled';
+
+import FavoritesItem from './FavoritesItem';
 
 const FavoritesPage = () => {
   const favoritesContext = useContext(CartContext);
@@ -15,10 +12,7 @@ const FavoritesPage = () => {
     <Container>
       <FavoritesList>
         {likedItems.map(item => (
-          <FavoritesLiItem key={item.id}>
-            <FavoritesImage src={item.image} alt={item.title} />
-            <p>{item.title}</p>
-          </FavoritesLiItem>
+          <FavoritesItem item={item} />
         ))}
       </FavoritesList>
     </Container>

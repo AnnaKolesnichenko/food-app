@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { CartContext } from '../../store/cart-context';
 import {
   Item,
@@ -14,6 +14,7 @@ import { motion } from 'framer-motion';
 const FastFoodItem = ({ item, handleOpenModal }) => {
   const cartCnxt = useContext(CartContext);
   const { handleLiked, likedItems } = cartCnxt;
+  // const [hoveredInfo, setHoveredInfo] = useState(false);
 
   const included = likedItems.map(likedItem => likedItem.id).includes(item.id);
 
@@ -34,10 +35,15 @@ const FastFoodItem = ({ item, handleOpenModal }) => {
       <StyledStar
         fillColor={included ? 'pink' : 'brown'}
         strokeColor={included ? 'white' : 'green'}
+        // onMouseEnter={() => setHoveredInfo(true)}
+        // onMouseLeave={() => setHoveredInfo(false)}
         onClick={() => {
           handleLiked(item.id);
         }}
       />
+      {/* {hoveredInfo && (
+        <h1 style={{ color: 'red', position: 'absolute', top: '-40px' }}>Hi</h1>
+      )} */}
       <StyledInfo>
         <Title>{item.title}</Title>
         <Price>${item.price}</Price>

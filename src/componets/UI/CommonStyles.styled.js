@@ -36,12 +36,12 @@ export const Button = styled.button`
   //width: 40%;
   margin-top: 5px;
   border: none;
-  padding: 5px 20px;
+  padding: 5px 15px;
   border-radius: 7px;
   font-size: 12 4px;
   font-family: 'Raleway', sans-serif;
   font-weight: bold;
-  letter-spacing: 1px;
+  letter-spacing: 0.4px;
   background-color: #d5cfc7;
   color: #3a2a21;
   cursor: pointer;
