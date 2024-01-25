@@ -1,41 +1,58 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from 'react';
+import { CartContext } from '../../store/cart-context';
+import { Backdrop, Button, Modal } from '../UI/CommonStyles.styled';
 import {
   StyledDiv,
   StyledForm,
   StyledInput,
   StyledLabel,
   StyledSpan,
-  StyledSubmitButton,
   StyledTitle,
-} from "./CheckOut.styled";
+} from './CheckOut.styled';
 
-import { CartContext } from "../../store/cart-context";
-import { Backdrop, Modal } from "../UI/CommonStyles.styled";
+import bg from '../../data/assets/b.jpeg';
+import { motion } from 'framer-motion';
+//import { Link } from 'react-router-dom';
 
-const CheckOut = ({ handleCheckClose }) => {
+const CheckOut = ({ handleCheckClose, handleCheckCloseCancelled }) => {
   const cartCtx = useContext(CartContext);
   const [totalCost, setTotalCost] = useState(0);
 
   useEffect(() => {
     let total = 0;
-    cartCtx.items.forEach((item) => {
+    cartCtx.items.forEach(item => {
       total += item.price * item.quantity;
     });
     setTotalCost(total);
   }, [cartCtx.items]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
     cartCtx.items.length = 0;
-    console.log("Done");
+    console.log('Done');
     handleCheckClose();
   };
 
   return (
     <Backdrop>
-      <Modal>
+      <Modal
+        as={motion.div}
+        variants={{
+          hidden: { opacity: 0, y: 50 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
+        transition={{ duration: 0.6, type: 'spring', bounce: 0.4 }}
+        style={{
+          backgroundImage: `url(${bg})`,
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+        }}
+      >
         <div>
-          <div style={{ marginBottom: "20px" }}>
+          <div style={{ marginBottom: '20px' }}>
             <StyledTitle>
               Total amount: <StyledSpan>${totalCost.toFixed(2)}</StyledSpan>
             </StyledTitle>
@@ -45,9 +62,9 @@ const CheckOut = ({ handleCheckClose }) => {
             <StyledInput type="text" id="name" />
             <div
               style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-between',
               }}
             >
               <StyledDiv>
@@ -63,9 +80,9 @@ const CheckOut = ({ handleCheckClose }) => {
             <StyledInput type="text" id="street" />
             <div
               style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-between',
               }}
             >
               <StyledDiv>
@@ -78,7 +95,26 @@ const CheckOut = ({ handleCheckClose }) => {
               </StyledDiv>
             </div>
           </StyledForm>
-          <StyledSubmitButton onClick={handleSubmit}>Submit</StyledSubmitButton>
+          <div style={{ display: 'flex', flexDirection: 'row', gap: '15px' }}>
+            <Button
+              type="button"
+              as={motion.button}
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: 'spring', stiffness: 500 }}
+              onClick={handleSubmit}
+            >
+              Submit
+            </Button>
+            <Button
+              type="button"
+              as={motion.button}
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: 'spring', stiffness: 500 }}
+              onClick={handleCheckCloseCancelled}
+            >
+              Cancel
+            </Button>
+          </div>
         </div>
       </Modal>
     </Backdrop>

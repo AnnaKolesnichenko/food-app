@@ -7,6 +7,7 @@ import {
   StyledPrice,
   StyledTitle,
   StyledActionDiv,
+  StyledImage,
 } from './CartItems.styled';
 
 const CartItems = () => {
@@ -18,9 +19,19 @@ const CartItems = () => {
         const price = Number(item.price);
         return (
           <StyledLiItem key={item.id}>
-            <div>
-              <StyledTitle>{item.title}</StyledTitle>
-              <StyledPrice>${price}</StyledPrice>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+                gap: '10px',
+              }}
+            >
+              <StyledImage src={item.image} alt={item.title} />
+              <div>
+                <StyledTitle>{item.title}</StyledTitle>
+                <StyledPrice>${price}</StyledPrice>
+              </div>
             </div>
             <StyledActionDiv>
               <StyledAction

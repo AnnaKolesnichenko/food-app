@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import {
   NavigationContainer,
   StyledNavLink,
@@ -11,8 +12,7 @@ import Cart from '../Cart/Cart';
 import { CartContext } from '../../store/cart-context';
 import CheckOut from '../CheckoutPage/CheckOut';
 import OrderAccepted from '../UI/OrderAccepted';
-
-import { AnimatePresence, motion } from 'framer-motion';
+import { AiOutlineLike } from 'react-icons/ai';
 
 const HeaderComponent = () => {
   const [cartOpen, setCartOpen] = useState(false);
@@ -38,12 +38,17 @@ const HeaderComponent = () => {
     setOrderAccepted(true);
   };
 
+  const handleCheckCloseCancelled = () => {
+    setCheckoutOpen(false);
+    setOrderAccepted(false);
+  };
+
   useEffect(() => {
     let timeout;
     if (orderAccepted) {
       timeout = setTimeout(() => {
         setOrderAccepted(false);
-      }, 3000);
+      }, 2000);
 
       return () => clearTimeout(timeout);
     }
@@ -59,16 +64,26 @@ const HeaderComponent = () => {
           />
         )}
       </AnimatePresence>
-      {checkoutOpen && <CheckOut handleCheckClose={handleCheckClose} />}
-      {orderAccepted && <OrderAccepted />}
+      <AnimatePresence>
+        {checkoutOpen && (
+          <CheckOut
+            handleCheckClose={handleCheckClose}
+            handleCheckCloseCancelled={handleCheckCloseCancelled}
+          />
+        )}
+      </AnimatePresence>
+      <AnimatePresence>{orderAccepted && <OrderAccepted />}</AnimatePresence>
       <div style={{ width: '120px', marginRight: '55px' }}>
         <StyledNavLink to="/">Food Culture</StyledNavLink>
       </div>
 
       <Header>
-        <StyledNavLinkMenu to="/sushi">asian food</StyledNavLinkMenu>
-        <StyledNavLinkMenu to="/pizza">fast food</StyledNavLinkMenu>
-        <StyledNavLinkMenu to="/salads">simple food</StyledNavLinkMenu>{' '}
+        <StyledNavLinkMenu to="/sushi">asian </StyledNavLinkMenu>
+        <StyledNavLinkMenu to="/pizza">fast </StyledNavLinkMenu>
+        <StyledNavLinkMenu to="/salads">simple </StyledNavLinkMenu>{' '}
+        <StyledNavLinkMenu to="/favorites">
+          {<AiOutlineLike />}
+        </StyledNavLinkMenu>
         <Button
           as={motion.button}
           whileHover={{ scale: 1.1 }}

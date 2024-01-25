@@ -1,9 +1,8 @@
-import { useContext } from 'react';
-import { Button } from './CartEmpty.styled';
-import { CartContext } from 'store/cart-context';
+import { Button } from 'componets/UI/CommonStyles.styled';
+import { motion } from 'framer-motion';
 
 const CartFilled = ({ totalCost, handleCloseButton, handleCheckOutOpen }) => {
-  const cartCntx = useContext(CartContext);
+  //const cartCntx = useContext(CartContext);
   return (
     <div
       style={{
@@ -18,13 +17,19 @@ const CartFilled = ({ totalCost, handleCloseButton, handleCheckOutOpen }) => {
       </h2>
       <div style={{ display: 'flex', gap: '10px' }}>
         <Button
+          as={motion.button}
+          whileHover={{ scale: 1.1 }}
+          transition={{ type: 'spring', stiffness: 500 }}
           onClick={handleCheckOutOpen}
           type="button"
-          style={{ width: '90px' }}
+          // style={{ width: '90px' }}
         >
           Checkout
         </Button>
         <Button
+          as={motion.button}
+          whileHover={{ scale: 1.1 }}
+          transition={{ type: 'spring', stiffness: 500 }}
           onClick={() => handleCloseButton()}
           type="button"
           style={{ width: '90px' }}

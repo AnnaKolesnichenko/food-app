@@ -9,6 +9,7 @@ import { ContainerMain } from './App.styled';
 // import Background from "./data/assets/rest-bg.jpeg";
 import CartContextProvider from './store/cart-context';
 import HeaderComponent from './componets/Header/Header';
+import FavoritesPage from 'componets/FavoritesPage/FavoritesPage';
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
           <Route path="/sushi" element={<SushiPage />} />
           <Route path="/pizza" element={<FastFoodPage />} />
           <Route path="/salads" element={<SaladsPage />} />
+          <Route path="/favorites" element={<FavoritesPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </ContainerMain>

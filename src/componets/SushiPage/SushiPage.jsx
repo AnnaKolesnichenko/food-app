@@ -91,6 +91,7 @@ const SushiPage = () => {
         backgroundColor: 'transparent',
         color: '#e37f19',
         fontSize: '20px',
+        marginTop: '-1px',
       },
     }),
   };

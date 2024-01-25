@@ -24,13 +24,16 @@ import { motion } from 'framer-motion';
 
 const ModalAbout = ({ id, handleCloseModal }) => {
   const context = useContext(CartContext);
-  let foodItem = ASIAN_DISH.find(item => item.id === id);
+  const { likedItems } = context;
 
+  let foodItem = ASIAN_DISH.find(item => item.id === id);
   if (!foodItem) {
     foodItem = FastFood.find(item => item.id === id);
   }
   const { image, title, price, description, cuisine, characteristic } =
     foodItem;
+
+  const favored = likedItems.map(item => item.id).includes(id);
 
   return (
     <Backdrop>
@@ -79,7 +82,10 @@ const ModalAbout = ({ id, handleCloseModal }) => {
               whileHover={{ scale: 1.2 }}
             />
             <CartStyled onClick={() => context.addItemToCart(id)} />
-            <LikedStyled />
+            <LikedStyled
+              style={{ fill: favored ? 'coral' : '' }}
+              onClick={() => context.handleLiked(id)}
+            />
           </ButtonsStyled>
         </div>
       </Modal>

@@ -1,14 +1,25 @@
-import { Backdrop, Modal } from "./CommonStyles.styled";
+import { motion } from 'framer-motion';
+import { Backdrop, Modal } from './CommonStyles.styled';
 import {
   StyledOrderDiv,
   StyledOrderTitle,
   StyledTickIcon,
-} from "./OrderAccepted.style";
+} from './OrderAccepted.style';
 
 const OrderAccepted = () => {
   return (
     <Backdrop>
-      <Modal>
+      <Modal
+        as={motion.div}
+        variants={{
+          hidden: { opacity: 0, y: 50 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
+        transition={{ duration: 0.7, type: 'spring', bounce: 0.4 }}
+      >
         <StyledOrderDiv>
           <StyledOrderTitle>Your order was accepted!</StyledOrderTitle>
           <StyledTickIcon />

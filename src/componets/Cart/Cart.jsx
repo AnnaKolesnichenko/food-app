@@ -37,7 +37,7 @@ const Cart = ({ handleCloseButton, handleCheckOutOpen }) => {
         initial="hidden"
         animate="visible"
         exit="hidden"
-        transition={{ duration: 0.3, type: 'spring', bounce: 0.4 }}
+        transition={{ duration: 0.6, type: 'spring', bounce: 0.4 }}
         style={{
           backgroundImage: `url(${bg})`,
           backgroundPosition: 'center',
@@ -45,7 +45,15 @@ const Cart = ({ handleCloseButton, handleCheckOutOpen }) => {
         }}
       >
         <div>
-          <h1 style={{ fontFamily: 'Raleway, sans-serif' }}>Your Cart</h1>
+          <h1
+            style={{
+              fontFamily: 'Raleway, sans-serif',
+              marginBottom: '5px',
+              marginTop: '10px',
+            }}
+          >
+            Your Cart
+          </h1>
           <div>
             {shopCnxt.items.length > 0 ? (
               <CartItems />

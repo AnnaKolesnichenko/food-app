@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const StyledListItems = styled.ul`
   list-style: none;
@@ -16,9 +16,15 @@ export const StyledLiItem = styled.li`
   box-sizing: border-box;
 `;
 
+export const StyledImage = styled.img`
+  width: 50px;
+  height: auto;
+  border-radius: 5px;
+`;
+
 export const StyledTitle = styled.h2`
   font-size: 16px;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   margin: 0;
   margin-bottom: 7px;
 `;
@@ -38,7 +44,7 @@ export const StyledAction = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   background-color: #2d2713;
   color: white;
   width: 24px;

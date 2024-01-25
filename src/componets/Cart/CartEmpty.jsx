@@ -1,5 +1,6 @@
+import { Button } from 'componets/UI/CommonStyles.styled';
+import { Container, Title } from './CartEmpty.styled';
 import { motion } from 'framer-motion';
-import { Button, Container, Title } from './CartEmpty.styled';
 
 const CartEmpty = ({ handleCloseButton }) => {
   return (
@@ -12,7 +13,13 @@ const CartEmpty = ({ handleCloseButton }) => {
       >
         Cart Total: $0.00
       </Title>
-      <Button onClick={() => handleCloseButton()} type="button">
+      <Button
+        as={motion.button}
+        whileHover={{ scale: 1.1 }}
+        transition={{ type: 'spring', stiffness: 500 }}
+        onClick={() => handleCloseButton()}
+        type="button"
+      >
         Close
       </Button>
     </Container>

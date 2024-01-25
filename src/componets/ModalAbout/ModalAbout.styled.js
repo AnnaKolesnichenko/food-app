@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { IoCloseCircleOutline } from 'react-icons/io5';
 import { BsCart4 } from 'react-icons/bs';
 import { AiOutlineLike } from 'react-icons/ai';
-import { transform } from 'framer-motion';
 
 export const Image = styled.img`
   width: 260px;
