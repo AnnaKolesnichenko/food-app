@@ -75,7 +75,7 @@ export const ASIAN_DISH = [
     characteristic: ['rice', 'chicken'],
     cuisine: ['all asian'],
     ingredients: [
-      '-1 lb ground chicken',
+      '1 lb ground chicken',
       '1 cup cooked quinoa or rice',
       '1 cup diced vegetables (bell peppers, onions, etc.)',
       '2 cloves garlic, minced',

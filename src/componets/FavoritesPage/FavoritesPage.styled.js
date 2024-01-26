@@ -19,11 +19,11 @@ export const FavoritesList = styled.ul`
 export const FavoritesLiItem = styled.li`
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 14px;
 `;
 
 export const FavoritesImage = styled.img`
-  width: 15%;
+  width: 174px;
   height: 215px;
   border-radius: 10px;
 `;
@@ -33,9 +33,9 @@ export const AboutDiv = styled.div`
   flex-direction: column;
   justify-content: space-between;
   box-sizing: border-box;
-  margin-right: 10px;
+  //margin-right: 10px;
   padding: 0;
-  width: 15%;
+  width: 154px;
 `;
 
 export const AboutTitle = styled.p`
@@ -45,7 +45,7 @@ export const AboutTitle = styled.p`
   color: #d5cfc7;
   font-size: 18px;
   font-weight: 800;
-  letter-spacing: 0.7px;
+  //letter-spacing: 0.7px;
 `;
 
 export const AboutComplexity = styled.h3`

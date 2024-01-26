@@ -24,7 +24,7 @@ const FavoritesRecipe = ({ id }) => {
       initial={{ x: -50, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.5, type: 'spring', bounce: 0.5 }}
-      exit={{ x: -100, opacity: 0 }}
+      exit={{ x: -50, opacity: 0 }}
     >
       <Recipe style={{ width: '45%' }}>
         <RecipeList>
