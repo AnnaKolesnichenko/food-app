@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { CartContext } from '../../store/cart-context';
 import { Backdrop, Button, Modal } from '../UI/CommonStyles.styled';
 import {
@@ -11,12 +11,19 @@ import {
 } from './CheckOut.styled';
 
 import bg from '../../data/assets/b.jpeg';
-import { motion } from 'framer-motion';
+import { motion, useAnimate, stagger } from 'framer-motion';
 //import { Link } from 'react-router-dom';
 
 const CheckOut = ({ handleCheckClose, handleCheckCloseCancelled }) => {
   const cartCtx = useContext(CartContext);
   const [totalCost, setTotalCost] = useState(0);
+  const [scope, animate] = useAnimate();
+
+  const name = useRef();
+  const email = useRef();
+  const phone = useRef();
+  const street = useRef();
+  const city = useRef();
 
   useEffect(() => {
     let total = 0;
@@ -28,6 +35,32 @@ const CheckOut = ({ handleCheckClose, handleCheckCloseCancelled }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
+
+    const userData = {
+      name: name.current.value,
+      email: email.current.value,
+      phone: phone.current.value,
+      street: street.current.value,
+      city: city.current.value,
+    };
+
+    if (
+      !userData.name.trim() ||
+      !userData.email.trim() ||
+      !userData.phone.trim() ||
+      !userData.street.trim() ||
+      !userData.city.trim()
+    ) {
+      console.log('invalid data');
+      animate(
+        'input',
+        { x: [-3, -1, 0, 1, 3, 0] },
+        { type: 'spring', duration: 0.1, delay: stagger(0.01) }
+      );
+      return;
+    }
+    console.log('SUCCESS');
+
     cartCtx.items.length = 0;
     console.log('Done');
     handleCheckClose();
@@ -57,9 +90,9 @@ const CheckOut = ({ handleCheckClose, handleCheckCloseCancelled }) => {
               Total amount: <StyledSpan>${totalCost.toFixed(2)}</StyledSpan>
             </StyledTitle>
           </div>
-          <StyledForm onSubmit={handleSubmit}>
+          <StyledForm onSubmit={handleSubmit} ref={scope}>
             <StyledLabel htmlFor="name">Full Name</StyledLabel>
-            <StyledInput type="text" id="name" />
+            <StyledInput ref={name} type="text" id="name" />
             <div
               style={{
                 display: 'flex',
@@ -69,15 +102,15 @@ const CheckOut = ({ handleCheckClose, handleCheckCloseCancelled }) => {
             >
               <StyledDiv>
                 <StyledLabel htmlFor="email">Email Address</StyledLabel>
-                <StyledInput type="email" id="email" />
+                <StyledInput ref={email} type="email" id="email" />
               </StyledDiv>
               <StyledDiv>
                 <StyledLabel htmlFor="phone">Phone Number</StyledLabel>
-                <StyledInput type="number" id="phone" />
+                <StyledInput ref={phone} type="number" id="phone" />
               </StyledDiv>
             </div>
             <StyledLabel htmlFor="street">Street</StyledLabel>
-            <StyledInput type="text" id="street" />
+            <StyledInput ref={street} type="text" id="street" />
             <div
               style={{
                 display: 'flex',
@@ -91,7 +124,7 @@ const CheckOut = ({ handleCheckClose, handleCheckCloseCancelled }) => {
               </StyledDiv>
               <StyledDiv>
                 <StyledLabel htmlFor="city">City</StyledLabel>
-                <StyledInput type="text" id="city" />
+                <StyledInput ref={city} type="text" id="city" />
               </StyledDiv>
             </div>
           </StyledForm>
