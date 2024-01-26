@@ -77,22 +77,46 @@ const HeaderComponent = () => {
         <StyledNavLink to="/">Food Culture</StyledNavLink>
       </div>
 
-      <Header>
-        <StyledNavLinkMenu to="/sushi">asian </StyledNavLinkMenu>
-        <StyledNavLinkMenu to="/pizza">fast </StyledNavLinkMenu>
-        <StyledNavLinkMenu to="/salads">simple </StyledNavLinkMenu>{' '}
-        <StyledNavLinkMenu to="/favorites">
-          {<AiOutlineLike />}
-        </StyledNavLinkMenu>
-        <Button
-          as={motion.button}
-          whileHover={{ scale: 1.1 }}
-          transition={{ type: 'spring', stiffness: 500 }}
-          onClick={handleCartOpen}
-        >
-          Cart ({cartCnxt.items.length})
-        </Button>
-      </Header>
+      <AnimatePresence>
+        <Header>
+          <StyledNavLinkMenu
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: 'spring', stiffness: 500, bounce: 0.5 }}
+            to="/sushi"
+          >
+            asian{' '}
+          </StyledNavLinkMenu>
+          <StyledNavLinkMenu
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: 'spring', stiffness: 500 }}
+            to="/pizza"
+          >
+            fast{' '}
+          </StyledNavLinkMenu>
+          <StyledNavLinkMenu
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: 'spring', stiffness: 500 }}
+            to="/salads"
+          >
+            simple{' '}
+          </StyledNavLinkMenu>{' '}
+          <StyledNavLinkMenu
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: 'spring', stiffness: 500 }}
+            to="/favorites"
+          >
+            {<AiOutlineLike />}
+          </StyledNavLinkMenu>
+          <Button
+            as={motion.button}
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: 'spring', stiffness: 500 }}
+            onClick={handleCartOpen}
+          >
+            Cart ({cartCnxt.items.length})
+          </Button>
+        </Header>
+      </AnimatePresence>
     </NavigationContainer>
   );
 };
