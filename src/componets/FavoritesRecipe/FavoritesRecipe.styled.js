@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const RecipeContainer = styled.div`
-  width: 667px;
+  width: 645px;
   display: flex;
   flex-direction: row;
   background-color: #2b240f;
@@ -10,13 +10,13 @@ export const RecipeContainer = styled.div`
 
 export const Recipe = styled.div`
   //width: 50%;
-  padding: 5px 5px;
+  //padding: 5px 5px;
   margin-top: 10px;
 `;
 
 export const RecipeTitle = styled.span`
   margin: 0;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   text-transform: capitalize;
   color: #d5cfc7;
   font-size: 14px;

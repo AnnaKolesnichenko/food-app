@@ -1,5 +1,7 @@
 import { ASIAN_DISH } from 'data/asian';
 import { FastFood } from 'data/available-meals';
+import { PiCookingPot, PiBowlFoodDuotone } from 'react-icons/pi';
+
 import React from 'react';
 import {
   RecipeContainer,
@@ -18,6 +20,7 @@ const FavoritesRecipe = ({ id }) => {
     product = FastFood.find(item => item.id === id);
   }
 
+  console.log(product.recipe);
   return (
     <RecipeContainer
       as={motion.div}
@@ -26,19 +29,49 @@ const FavoritesRecipe = ({ id }) => {
       transition={{ duration: 0.5, type: 'spring', bounce: 0.5 }}
       exit={{ x: -50, opacity: 0 }}
     >
-      <Recipe style={{ width: '45%' }}>
+      <Recipe
+        style={{ width: '45%', paddingLeft: '5px', paddingBottom: '5px' }}
+      >
         <RecipeList>
           <RecipeTitle>what?</RecipeTitle>
           {product.ingredients.map((item, i) => (
             <RecipeListItem key={i}>
-              <RecipeIndgredient>{item}</RecipeIndgredient>
+              <RecipeIndgredient>
+                <span
+                  style={{
+                    marginRight: '2px',
+                  }}
+                >
+                  <PiBowlFoodDuotone fill="grey" />
+                </span>
+                {item}
+              </RecipeIndgredient>
             </RecipeListItem>
           ))}
         </RecipeList>
       </Recipe>
-      <Recipe style={{ width: '55%' }}>
+      <Recipe
+        style={{ width: '55%', paddingRight: '5px', paddingBottom: '5px' }}
+      >
         <RecipeTitle>how?</RecipeTitle>{' '}
-        <RecipeSteps>{product.recipe}</RecipeSteps>
+        <RecipeSteps>
+          {product.recipe.map((item, i) => (
+            <RecipeListItem key={i}>
+              <RecipeIndgredient>
+                {' '}
+                <span
+                  style={{
+                    marginRight: '2px',
+                  }}
+                >
+                  <PiCookingPot fill="grey" />
+                  {'  '}
+                </span>
+                {item}
+              </RecipeIndgredient>
+            </RecipeListItem>
+          ))}
+        </RecipeSteps>
       </Recipe>
     </RecipeContainer>
   );

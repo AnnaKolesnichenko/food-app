@@ -19,7 +19,7 @@ export const FavoritesList = styled.ul`
 export const FavoritesLiItem = styled.li`
   display: flex;
   flex-direction: row;
-  gap: 14px;
+  gap: 10px;
 `;
 
 export const FavoritesImage = styled.img`
@@ -31,7 +31,7 @@ export const FavoritesImage = styled.img`
 export const AboutDiv = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  //justify-content: space-between;
   box-sizing: border-box;
   //margin-right: 10px;
   padding: 0;
@@ -50,6 +50,7 @@ export const AboutTitle = styled.p`
 
 export const AboutComplexity = styled.h3`
   margin: 0;
+  margin-bottom: 108px;
   color: #d5cfc7;
   font-size: 12px;
   font-weight: 600;
