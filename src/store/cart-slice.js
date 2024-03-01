@@ -18,9 +18,9 @@ const cartSlice = createSlice({
         (item) => item.id === action.payload
       );
 
-      if (!product || !existingItem) {
-        alert("Product not found");
-      }
+      //   if (!product || !existingItem) {
+      //     alert("Product not found");
+      //   }
 
       if (existingItem) {
         existingItem.quantity++;
@@ -50,6 +50,7 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addItemToCart, handleDecreaseItem, handleIncreaseItem } =
-  cartSlice.actions;
-export default cartSlice.reducer;
+// export const { addItemToCart, handleDecreaseItem, handleIncreaseItem } =
+//   cartSlice.actions;
+export const cartActions = cartSlice.actions;
+export const CartReducer = cartSlice.reducer;

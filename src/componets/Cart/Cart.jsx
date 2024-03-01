@@ -1,13 +1,13 @@
-import { useContext, useEffect, useState } from 'react';
-import { Backdrop, Modal } from '../UI/CommonStyles.styled';
-import { CartContext } from '../../store/cart-context';
-import CartEmpty from './CartEmpty';
-import CartFilled from './CartFilled';
+import { useContext, useEffect, useState } from "react";
+import { Backdrop, Modal } from "../UI/CommonStyles.styled";
+import { CartContext } from "../../store/cart-context";
+import CartEmpty from "./CartEmpty";
+import CartFilled from "./CartFilled";
 
-import bg from '../../data/assets/b.jpeg';
-import CartItems from '../CartItems/CartItems';
+import bg from "../../data/assets/b.jpeg";
+import CartItems from "../CartItems/CartItems";
 
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const Cart = ({ handleCloseButton, handleCheckOutOpen }) => {
   const shopCnxt = useContext(CartContext);
@@ -16,7 +16,7 @@ const Cart = ({ handleCloseButton, handleCheckOutOpen }) => {
 
   useEffect(() => {
     let total = 0;
-    shopCnxt.items.forEach(item => {
+    shopCnxt.items.forEach((item) => {
       total += item.price * item.quantity;
     });
     setTotalCost(total);
@@ -37,19 +37,19 @@ const Cart = ({ handleCloseButton, handleCheckOutOpen }) => {
         initial="hidden"
         animate="visible"
         exit="hidden"
-        transition={{ duration: 0.6, type: 'spring', bounce: 0.4 }}
+        transition={{ duration: 0.6, type: "spring", bounce: 0.4 }}
         style={{
           backgroundImage: `url(${bg})`,
-          backgroundPosition: 'center',
-          backgroundSize: 'cover',
+          backgroundPosition: "center",
+          backgroundSize: "cover",
         }}
       >
         <div>
           <h1
             style={{
-              fontFamily: 'Raleway, sans-serif',
-              marginBottom: '5px',
-              marginTop: '10px',
+              fontFamily: "Raleway, sans-serif",
+              marginBottom: "5px",
+              marginTop: "10px",
             }}
           >
             Your Cart

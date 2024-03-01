@@ -30,5 +30,5 @@ const likedSlice = createSlice({
   },
 });
 
-export const { handleLiked } = likedSlice.actions;
+export const likedActions = likedSlice.actions;
 export default likedSlice.reducer;

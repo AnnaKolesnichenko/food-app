@@ -10,20 +10,12 @@ import {
 import { Button } from "componets/UI/CommonStyles.styled";
 import { CartContext } from "../../store/cart-context";
 import { motion } from "framer-motion";
-import { useDispatch } from "react-redux";
-import { addItemToCart } from "store/cart-slice";
 
 const FoodItem = ({ item, handleOpenModal }) => {
   const cartCnxt = useContext(CartContext);
   const { likedItems, handleLiked } = cartCnxt;
 
-  const dispatch = useDispatch();
-
   const included = likedItems.map((liked) => liked.id).includes(item.id);
-
-  const handleAddToCart = () => {
-    dispatch(addItemToCart(item.id));
-  };
 
   return (
     <Item
@@ -60,7 +52,7 @@ const FoodItem = ({ item, handleOpenModal }) => {
             whileHover={{ scale: 1.1 }}
             transition={{ type: "spring", stiffness: 500 }}
             type="button"
-            onClick={handleAddToCart}
+            onClick={() => cartCnxt.addItemToCart(item.id)}
           >
             Order
           </Button>
