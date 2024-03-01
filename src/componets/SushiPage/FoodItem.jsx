@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext } from "react";
 import {
   Item,
   Price,
@@ -6,16 +6,24 @@ import {
   StyledInfo,
   StyledStar,
   Title,
-} from './SushiPage.styled';
-import { Button } from 'componets/UI/CommonStyles.styled';
-import { CartContext } from '../../store/cart-context';
-import { motion } from 'framer-motion';
+} from "./SushiPage.styled";
+import { Button } from "componets/UI/CommonStyles.styled";
+import { CartContext } from "../../store/cart-context";
+import { motion } from "framer-motion";
+import { useDispatch } from "react-redux";
+import { addItemToCart } from "store/cart-slice";
 
 const FoodItem = ({ item, handleOpenModal }) => {
   const cartCnxt = useContext(CartContext);
   const { likedItems, handleLiked } = cartCnxt;
 
-  const included = likedItems.map(liked => liked.id).includes(item.id);
+  const dispatch = useDispatch();
+
+  const included = likedItems.map((liked) => liked.id).includes(item.id);
+
+  const handleAddToCart = () => {
+    dispatch(addItemToCart(item.id));
+  };
 
   return (
     <Item
@@ -24,16 +32,16 @@ const FoodItem = ({ item, handleOpenModal }) => {
         hidden: { opacity: 0, scale: 0.9 },
         visible: { opacity: 1, scale: 1 },
       }}
-      style={{ position: 'relative' }}
+      style={{ position: "relative" }}
     >
       <StyledImage
         src={item.image}
         alt={item.title}
-        opacity={included ? '0.5' : '1'}
+        opacity={included ? "0.5" : "1"}
       />
       <StyledStar
-        fillColor={included ? 'pink' : 'brown'}
-        strokeColor={included ? 'white' : 'green'}
+        fillColor={included ? "pink" : "brown"}
+        strokeColor={included ? "white" : "green"}
         onClick={() => handleLiked(item.id)}
       />
       <StyledInfo>
@@ -41,27 +49,25 @@ const FoodItem = ({ item, handleOpenModal }) => {
         <Price>${item.price}</Price>
         <div
           style={{
-            display: 'flex',
-            flexDirection: 'row',
+            display: "flex",
+            flexDirection: "row",
             gap: 5,
-            justifyContent: 'center',
+            justifyContent: "center",
           }}
         >
           <Button
             as={motion.button}
             whileHover={{ scale: 1.1 }}
-            transition={{ type: 'spring', stiffness: 500 }}
+            transition={{ type: "spring", stiffness: 500 }}
             type="button"
-            onClick={() => {
-              cartCnxt.addItemToCart(item.id);
-            }}
+            onClick={handleAddToCart}
           >
             Order
           </Button>
           <Button
             as={motion.button}
             whileHover={{ scale: 1.1 }}
-            transition={{ type: 'spring', stiffness: 500 }}
+            transition={{ type: "spring", stiffness: 500 }}
             type="button"
             onClick={() => {
               handleOpenModal(item.id);

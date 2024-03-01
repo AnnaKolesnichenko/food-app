@@ -1,17 +1,36 @@
-import { Routes, Route } from 'react-router-dom';
-import './App.css';
-import MainPage from './componets/MainPage/MainPage';
-import SushiPage from './componets/SushiPage/SushiPage';
-import SaladsPage from './componets/SaladsPage/SaladsPage';
-import FastFoodPage from './componets/PizzaPage/FastFoodPage';
-import NotFound from './componets/NotFound/NotFound';
-import { ContainerMain } from './App.styled';
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
+import MainPage from "./componets/MainPage/MainPage";
+import SushiPage from "./componets/SushiPage/SushiPage";
+import SaladsPage from "./componets/SaladsPage/SaladsPage";
+import FastFoodPage from "./componets/PizzaPage/FastFoodPage";
+import NotFound from "./componets/NotFound/NotFound";
+import { ContainerMain } from "./App.styled";
 // import Background from "./data/assets/rest-bg.jpeg";
-import CartContextProvider from './store/cart-context';
-import HeaderComponent from './componets/Header/Header';
-import FavoritesPage from 'componets/FavoritesPage/FavoritesPage';
+import CartContextProvider from "./store/cart-context";
+import HeaderComponent from "./componets/Header/Header";
+import FavoritesPage from "componets/FavoritesPage/FavoritesPage";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://cook-and-deliver-default-rtdb.asia-southeast1.firebasedatabase.app/asian.json"
+        );
+        const data = await response.json();
+        console.log(data); // Log the fetched data to the console
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+
+    // No cleanup needed, so no return statement here
+  }, []);
+
   return (
     <CartContextProvider>
       <ContainerMain
