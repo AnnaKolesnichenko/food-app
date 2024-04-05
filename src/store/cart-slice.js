@@ -11,33 +11,35 @@ const cartSlice = createSlice({
   initialState: initialState,
   reducers: {
     addItemToCart(state, action) {
-      const product =
-        ASIAN_DISH.find((item) => item.id === action.payload) ||
-        FastFood.find((item) => item.id === action.payload);
-      const existingItem = state.items.find(
-        (item) => item.id === action.payload
-      );
+      const id = action.payload;
+      let product = ASIAN_DISH.find((item) => item.id === id);
 
-      //   if (!product || !existingItem) {
-      //     alert("Product not found");
-      //   }
+      if (!product) {
+        FastFood.find((item) => item.id === id);
+      }
 
-      if (existingItem) {
-        existingItem.quantity++;
+      if (product) {
+        const existingItem = state.items.find((item) => item.id === id);
+
+        if (existingItem) {
+          existingItem.quantity++;
+        } else {
+          state.items.push({ ...product, quantity: 1 });
+        }
       } else {
-        state.items.push({ ...product, quantity: 1 });
+        alert("There is no such product");
       }
     },
     handleIncreaseItem(state, action) {
-      const item = state.items.find((item) => item.id === action.payload);
+      const id = action.payload;
+      const item = state.items.find((item) => item.id === id);
       if (item) {
         item.quantity++;
       }
     },
     handleDecreaseItem(state, action) {
-      const itemIndex = state.items.findIndex(
-        (item) => item.id === action.payload
-      );
+      const id = action.payload;
+      const itemIndex = state.items.findIndex((item) => item.id === id);
       if (itemIndex !== -1) {
         const item = state.items[itemIndex];
         if (item.quantity === 1) {
@@ -47,10 +49,18 @@ const cartSlice = createSlice({
         }
       }
     },
+    clearCart(state, action) {
+      state.items = [];
+    },
   },
 });
 
 // export const { addItemToCart, handleDecreaseItem, handleIncreaseItem } =
 //   cartSlice.actions;
-export const cartActions = cartSlice.actions;
+export const {
+  addItemToCart,
+  handleDecreaseItem,
+  handleIncreaseItem,
+  clearCart,
+} = cartSlice.actions;
 export const CartReducer = cartSlice.reducer;

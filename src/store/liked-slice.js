@@ -3,7 +3,7 @@ import { ASIAN_DISH } from "data/asian";
 import { FastFood } from "data/available-meals";
 
 const initialState = {
-  favoured: [],
+  itemsLiked: [],
 };
 
 const likedSlice = createSlice({
@@ -11,24 +11,24 @@ const likedSlice = createSlice({
   initialState,
   reducers: {
     handleLiked(state, action) {
+      const id = action.payload;
       const product =
-        ASIAN_DISH.find((item) => item.id === action.payload) ||
-        FastFood.find((item) => item.id === action.payload);
+        ASIAN_DISH.find((item) => item.id === id) ||
+        FastFood.find((item) => item.id === id);
 
       if (product) {
-        if (
-          state.likedItems.some((likedItem) => likedItem.id === action.payload)
-        ) {
-          state.likedItems = state.likedItems.filter(
-            (likedItem) => likedItem.id !== action.payload
-          );
+        const existingItem = state.itemsLiked.findIndex(
+          (item) => item.id === id
+        );
+        if (existingItem !== -1) {
+          state.itemsLiked.splice(existingItem, 1);
         } else {
-          state.likedItems.push(product);
+          state.itemsLiked.push(product);
         }
       }
     },
   },
 });
 
-export const likedActions = likedSlice.actions;
-export default likedSlice.reducer;
+export const { handleLiked } = likedSlice.actions;
+export const LikedReducer = likedSlice.reducer;

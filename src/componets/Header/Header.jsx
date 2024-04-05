@@ -1,24 +1,24 @@
-import { useContext, useEffect, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import {
   NavigationContainer,
   StyledNavLink,
   StyledNavLinkMenu,
   Button,
   Header,
-} from '../../App.styled';
+} from "../../App.styled";
 
-import Cart from '../Cart/Cart';
-import { CartContext } from '../../store/cart-context';
-import CheckOut from '../CheckoutPage/CheckOut';
-import OrderAccepted from '../UI/OrderAccepted';
-import { AiOutlineLike } from 'react-icons/ai';
+import Cart from "../Cart/Cart";
+import CheckOut from "../CheckoutPage/CheckOut";
+import OrderAccepted from "../UI/OrderAccepted";
+import { AiOutlineLike } from "react-icons/ai";
+import { useSelector } from "react-redux";
 
 const HeaderComponent = () => {
   const [cartOpen, setCartOpen] = useState(false);
   const [checkoutOpen, setCheckoutOpen] = useState(false);
   const [orderAccepted, setOrderAccepted] = useState(false);
-  const cartCnxt = useContext(CartContext);
+  const items = useSelector((state) => state.cart.items);
 
   const handleCartOpen = () => {
     setCartOpen(!cartOpen);
@@ -73,7 +73,7 @@ const HeaderComponent = () => {
         )}
       </AnimatePresence>
       <AnimatePresence>{orderAccepted && <OrderAccepted />}</AnimatePresence>
-      <div style={{ width: '120px', marginRight: '55px' }}>
+      <div style={{ width: "120px", marginRight: "55px" }}>
         <StyledNavLink to="/">Food Culture</StyledNavLink>
       </div>
 
@@ -81,28 +81,28 @@ const HeaderComponent = () => {
         <Header>
           <StyledNavLinkMenu
             whileHover={{ scale: 1.1 }}
-            transition={{ type: 'spring', stiffness: 500, bounce: 0.5 }}
+            transition={{ type: "spring", stiffness: 500, bounce: 0.5 }}
             to="/sushi"
           >
-            asian{' '}
+            asian{" "}
           </StyledNavLinkMenu>
           <StyledNavLinkMenu
             whileHover={{ scale: 1.1 }}
-            transition={{ type: 'spring', stiffness: 500 }}
+            transition={{ type: "spring", stiffness: 500 }}
             to="/pizza"
           >
-            fast{' '}
+            fast{" "}
           </StyledNavLinkMenu>
           <StyledNavLinkMenu
             whileHover={{ scale: 1.1 }}
-            transition={{ type: 'spring', stiffness: 500 }}
+            transition={{ type: "spring", stiffness: 500 }}
             to="/salads"
           >
-            simple{' '}
-          </StyledNavLinkMenu>{' '}
+            simple{" "}
+          </StyledNavLinkMenu>{" "}
           <StyledNavLinkMenu
             whileHover={{ scale: 1.1 }}
-            transition={{ type: 'spring', stiffness: 500 }}
+            transition={{ type: "spring", stiffness: 500 }}
             to="/favorites"
           >
             {<AiOutlineLike />}
@@ -110,10 +110,10 @@ const HeaderComponent = () => {
           <Button
             as={motion.button}
             whileHover={{ scale: 1.1 }}
-            transition={{ type: 'spring', stiffness: 500 }}
+            transition={{ type: "spring", stiffness: 500 }}
             onClick={handleCartOpen}
           >
-            Cart ({cartCnxt.items.length})
+            Cart ({items.length})
           </Button>
         </Header>
       </AnimatePresence>

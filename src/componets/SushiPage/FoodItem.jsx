@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import {
   Item,
   Price,
@@ -8,12 +8,25 @@ import {
   Title,
 } from "./SushiPage.styled";
 import { Button } from "componets/UI/CommonStyles.styled";
-import { CartContext } from "../../store/cart-context";
+
 import { motion } from "framer-motion";
+import { useDispatch, useSelector } from "react-redux";
+import { handleLiked } from "store/liked-slice";
+import { addItemToCart } from "store/cart-slice";
 
 const FoodItem = ({ item, handleOpenModal }) => {
-  const cartCnxt = useContext(CartContext);
-  const { likedItems, handleLiked } = cartCnxt;
+  // const cartCnxt = useContext(CartContext);
+  // const { likedItems, handleLiked } = cartCnxt;
+  const likedItems = useSelector((state) => state.liked.itemsLiked);
+  const dispatch = useDispatch();
+
+  const handleLikedChanged = () => {
+    dispatch(handleLiked(item.id));
+  };
+
+  const addProductToCart = () => {
+    dispatch(addItemToCart(item.id));
+  };
 
   const included = likedItems.map((liked) => liked.id).includes(item.id);
 
@@ -34,7 +47,7 @@ const FoodItem = ({ item, handleOpenModal }) => {
       <StyledStar
         fillColor={included ? "pink" : "brown"}
         strokeColor={included ? "white" : "green"}
-        onClick={() => handleLiked(item.id)}
+        onClick={handleLikedChanged}
       />
       <StyledInfo>
         <Title>{item.title}</Title>
@@ -52,7 +65,7 @@ const FoodItem = ({ item, handleOpenModal }) => {
             whileHover={{ scale: 1.1 }}
             transition={{ type: "spring", stiffness: 500 }}
             type="button"
-            onClick={() => cartCnxt.addItemToCart(item.id)}
+            onClick={addProductToCart}
           >
             Order
           </Button>

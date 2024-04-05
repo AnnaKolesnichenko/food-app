@@ -1,6 +1,5 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Backdrop, Modal } from "../UI/CommonStyles.styled";
-import { CartContext } from "../../store/cart-context";
 import CartEmpty from "./CartEmpty";
 import CartFilled from "./CartFilled";
 
@@ -8,19 +7,20 @@ import bg from "../../data/assets/b.jpeg";
 import CartItems from "../CartItems/CartItems";
 
 import { motion } from "framer-motion";
+import { useSelector } from "react-redux";
 
 const Cart = ({ handleCloseButton, handleCheckOutOpen }) => {
-  const shopCnxt = useContext(CartContext);
+  //const shopCnxt = useContext(CartContext);
   const [totalCost, setTotalCost] = useState(0);
-  // const [checkoutOpen, setCheckoutOpen] = useState(false);
+  const items = useSelector((state) => state.cart.items);
 
   useEffect(() => {
     let total = 0;
-    shopCnxt.items.forEach((item) => {
+    items.forEach((item) => {
       total += item.price * item.quantity;
     });
     setTotalCost(total);
-  }, [shopCnxt.items]);
+  }, [items]);
 
   // const handleCheckoutOoen = () => {
 
@@ -55,15 +55,11 @@ const Cart = ({ handleCloseButton, handleCheckOutOpen }) => {
             Your Cart
           </h1>
           <div>
-            {shopCnxt.items.length > 0 ? (
-              <CartItems />
-            ) : (
-              <p>Your Cart is Empty!</p>
-            )}
+            {items.length > 0 ? <CartItems /> : <p>Your Cart is Empty!</p>}
           </div>
         </div>
         <div>
-          {shopCnxt.items.length === 0 ? (
+          {items.length === 0 ? (
             <CartEmpty handleCloseButton={handleCloseButton} />
           ) : (
             <CartFilled

@@ -1,6 +1,6 @@
-import { useContext, useEffect, useRef, useState } from 'react';
-import { CartContext } from '../../store/cart-context';
-import { Backdrop, Button, Modal } from '../UI/CommonStyles.styled';
+import { useEffect, useRef, useState } from "react";
+
+import { Backdrop, Button, Modal } from "../UI/CommonStyles.styled";
 import {
   StyledDiv,
   StyledForm,
@@ -8,16 +8,21 @@ import {
   StyledLabel,
   StyledSpan,
   StyledTitle,
-} from './CheckOut.styled';
+} from "./CheckOut.styled";
 
-import bg from '../../data/assets/b.jpeg';
-import { motion, useAnimate, stagger } from 'framer-motion';
+import bg from "../../data/assets/b.jpeg";
+import { motion, useAnimate, stagger } from "framer-motion";
+import { useDispatch, useSelector } from "react-redux";
+import { clearCart } from "store/cart-slice";
 //import { Link } from 'react-router-dom';
 
 const CheckOut = ({ handleCheckClose, handleCheckCloseCancelled }) => {
-  const cartCtx = useContext(CartContext);
+  // const cartCtx = useContext(CartContext);
   const [totalCost, setTotalCost] = useState(0);
   const [scope, animate] = useAnimate();
+
+  const items = useSelector((state) => state.cart.items);
+  const dispatch = useDispatch();
 
   const name = useRef();
   const email = useRef();
@@ -27,13 +32,13 @@ const CheckOut = ({ handleCheckClose, handleCheckCloseCancelled }) => {
 
   useEffect(() => {
     let total = 0;
-    cartCtx.items.forEach(item => {
+    items.forEach((item) => {
       total += item.price * item.quantity;
     });
     setTotalCost(total);
-  }, [cartCtx.items]);
+  }, [items]);
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     const userData = {
@@ -51,18 +56,18 @@ const CheckOut = ({ handleCheckClose, handleCheckCloseCancelled }) => {
       !userData.street.trim() ||
       !userData.city.trim()
     ) {
-      console.log('invalid data');
+      console.log("invalid data");
       animate(
-        'input',
+        "input",
         { x: [-3, -1, 0, 1, 3, 0] },
-        { type: 'spring', duration: 0.1, delay: stagger(0.01) }
+        { type: "spring", duration: 0.1, delay: stagger(0.01) }
       );
       return;
     }
-    console.log('SUCCESS');
+    console.log("SUCCESS");
 
-    cartCtx.items.length = 0;
-    console.log('Done');
+    dispatch(clearCart());
+    console.log("Done");
     handleCheckClose();
   };
 
@@ -77,15 +82,15 @@ const CheckOut = ({ handleCheckClose, handleCheckCloseCancelled }) => {
         initial="hidden"
         animate="visible"
         exit="hidden"
-        transition={{ duration: 0.6, type: 'spring', bounce: 0.4 }}
+        transition={{ duration: 0.6, type: "spring", bounce: 0.4 }}
         style={{
           backgroundImage: `url(${bg})`,
-          backgroundPosition: 'center',
-          backgroundSize: 'cover',
+          backgroundPosition: "center",
+          backgroundSize: "cover",
         }}
       >
         <div>
-          <div style={{ marginBottom: '20px' }}>
+          <div style={{ marginBottom: "20px" }}>
             <StyledTitle>
               Total amount: <StyledSpan>${totalCost.toFixed(2)}</StyledSpan>
             </StyledTitle>
@@ -95,9 +100,9 @@ const CheckOut = ({ handleCheckClose, handleCheckCloseCancelled }) => {
             <StyledInput ref={name} type="text" id="name" />
             <div
               style={{
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-between',
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
               }}
             >
               <StyledDiv>
@@ -113,9 +118,9 @@ const CheckOut = ({ handleCheckClose, handleCheckCloseCancelled }) => {
             <StyledInput ref={street} type="text" id="street" />
             <div
               style={{
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-between',
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
               }}
             >
               <StyledDiv>
@@ -128,12 +133,12 @@ const CheckOut = ({ handleCheckClose, handleCheckCloseCancelled }) => {
               </StyledDiv>
             </div>
           </StyledForm>
-          <div style={{ display: 'flex', flexDirection: 'row', gap: '15px' }}>
+          <div style={{ display: "flex", flexDirection: "row", gap: "15px" }}>
             <Button
               type="button"
               as={motion.button}
               whileHover={{ scale: 1.1 }}
-              transition={{ type: 'spring', stiffness: 500 }}
+              transition={{ type: "spring", stiffness: 500 }}
               onClick={handleSubmit}
             >
               Submit
@@ -142,7 +147,7 @@ const CheckOut = ({ handleCheckClose, handleCheckCloseCancelled }) => {
               type="button"
               as={motion.button}
               whileHover={{ scale: 1.1 }}
-              transition={{ type: 'spring', stiffness: 500 }}
+              transition={{ type: "spring", stiffness: 500 }}
               onClick={handleCheckCloseCancelled}
             >
               Cancel

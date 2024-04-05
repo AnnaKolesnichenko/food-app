@@ -1,5 +1,3 @@
-import { useContext } from 'react';
-import { CartContext } from '../../store/cart-context';
 import {
   Item,
   StyledImage,
@@ -7,16 +5,33 @@ import {
   StyledInfo,
   Title,
   Price,
-} from './FastFoodItem.styled';
-import { Button } from 'componets/UI/CommonStyles.styled';
-import { motion } from 'framer-motion';
+} from "./FastFoodItem.styled";
+import { Button } from "componets/UI/CommonStyles.styled";
+import { motion } from "framer-motion";
+import { useDispatch, useSelector } from "react-redux";
+import { handleLiked } from "store/liked-slice";
+import { addItemToCart } from "store/cart-slice";
 
 const FastFoodItem = ({ item, handleOpenModal }) => {
-  const cartCnxt = useContext(CartContext);
-  const { handleLiked, likedItems } = cartCnxt;
-  // const [hoveredInfo, setHoveredInfo] = useState(false);
+  // const cartCnxt = useContext(CartContext);
+  // const { handleLiked, likedItems } = cartCnxt;
 
-  const included = likedItems.map(likedItem => likedItem.id).includes(item.id);
+  const likedItems = useSelector((state) => state.liked.itemsLiked);
+  const dispatch = useDispatch();
+
+  const handleLikedChanged = () => {
+    dispatch(handleLiked(item.id));
+    console.log(item.id);
+  };
+
+  const addProductToCart = () => {
+    dispatch(addItemToCart(item.id));
+    console.log(item.id);
+  };
+
+  const included = likedItems
+    .map((likedItem) => likedItem.id)
+    .includes(item.id);
 
   return (
     <Item
@@ -25,44 +40,35 @@ const FastFoodItem = ({ item, handleOpenModal }) => {
         hidden: { opacity: 0, scale: 0.9 },
         visible: { opacity: 1, scale: 1 },
       }}
-      style={{ position: 'relative' }}
+      style={{ position: "relative" }}
     >
       <StyledImage
         src={item.image}
         alt={item.name}
-        opacity={included ? '0.5' : '1'}
+        opacity={included ? "0.5" : "1"}
       />
       <StyledStar
-        fillColor={included ? 'pink' : 'brown'}
-        strokeColor={included ? 'white' : 'green'}
-        // onMouseEnter={() => setHoveredInfo(true)}
-        // onMouseLeave={() => setHoveredInfo(false)}
-        onClick={() => {
-          handleLiked(item.id);
-        }}
+        fillColor={included ? "pink" : "brown"}
+        strokeColor={included ? "white" : "green"}
+        onClick={handleLikedChanged}
       />
-      {/* {hoveredInfo && (
-        <h1 style={{ color: 'red', position: 'absolute', top: '-40px' }}>Hi</h1>
-      )} */}
       <StyledInfo>
         <Title>{item.title}</Title>
         <Price>${item.price}</Price>
         <div
           style={{
-            display: 'flex',
-            flexDirection: 'row',
+            display: "flex",
+            flexDirection: "row",
             gap: 5,
-            justifyContent: 'center',
+            justifyContent: "center",
           }}
         >
           <Button
             type="button"
             as={motion.button}
             whileHover={{ scale: 1.1 }}
-            transition={{ type: 'spring', stiffness: 500 }}
-            onClick={() => {
-              cartCnxt.addItemToCart(item.id);
-            }}
+            transition={{ type: "spring", stiffness: 500 }}
+            onClick={addProductToCart}
           >
             Order
           </Button>
@@ -70,7 +76,7 @@ const FastFoodItem = ({ item, handleOpenModal }) => {
             type="button"
             as={motion.button}
             whileHover={{ scale: 1.1 }}
-            transition={{ type: 'spring', stiffness: 500 }}
+            transition={{ type: "spring", stiffness: 500 }}
             onClick={() => handleOpenModal(item.id)}
           >
             About

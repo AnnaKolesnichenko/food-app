@@ -1,5 +1,4 @@
-import { useContext } from 'react';
-import { CartContext } from '../../store/cart-context';
+import { useDispatch, useSelector } from "react-redux";
 import {
   StyledAction,
   StyledLiItem,
@@ -8,23 +7,26 @@ import {
   StyledTitle,
   StyledActionDiv,
   StyledImage,
-} from './CartItems.styled';
+} from "./CartItems.styled";
+import { handleDecreaseItem, handleIncreaseItem } from "store/cart-slice";
 
 const CartItems = () => {
-  const shopCnxt = useContext(CartContext);
-  // console.log(shopCnxt.items);
+  //const shopCnxt = useContext(CartContext);
+  const items = useSelector((state) => state.cart.items);
+  const dispatch = useDispatch();
+
   return (
     <StyledListItems>
-      {shopCnxt.items.map(item => {
+      {items.map((item) => {
         const price = Number(item.price);
         return (
           <StyledLiItem key={item.id}>
             <div
               style={{
-                display: 'flex',
-                flexDirection: 'row',
-                alignItems: 'center',
-                gap: '10px',
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                gap: "10px",
               }}
             >
               <StyledImage src={item.image} alt={item.title} />
@@ -36,7 +38,7 @@ const CartItems = () => {
             <StyledActionDiv>
               <StyledAction
                 onClick={() => {
-                  shopCnxt.handleDecreaseItem(item.id);
+                  dispatch(handleDecreaseItem(item.id));
                   console.log(item.id);
                 }}
               >
@@ -45,8 +47,7 @@ const CartItems = () => {
               <span>{item.quantity}</span>
               <StyledAction
                 onClick={() => {
-                  shopCnxt.addItemToCart(item.id);
-                  console.log(item.id);
+                  dispatch(handleIncreaseItem(item.id));
                 }}
               >
                 +

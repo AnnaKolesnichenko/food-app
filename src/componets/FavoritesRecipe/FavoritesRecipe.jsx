@@ -1,8 +1,8 @@
-import { ASIAN_DISH } from 'data/asian';
-import { FastFood } from 'data/available-meals';
-import { PiCookingPot, PiBowlFoodDuotone } from 'react-icons/pi';
+import { ASIAN_DISH } from "data/asian";
+import { FastFood } from "data/available-meals";
+import { PiCookingPot, PiBowlFoodDuotone } from "react-icons/pi";
 
-import React from 'react';
+import React from "react";
 import {
   RecipeContainer,
   Recipe,
@@ -11,26 +11,27 @@ import {
   RecipeListItem,
   RecipeSteps,
   RecipeTitle,
-} from './FavoritesRecipe.styled';
-import { motion } from 'framer-motion';
+} from "./FavoritesRecipe.styled";
+import { motion } from "framer-motion";
 
 const FavoritesRecipe = ({ id }) => {
-  let product = ASIAN_DISH.find(item => item.id === id);
+  let product = ASIAN_DISH.find((item) => item.id === id);
   if (!product) {
-    product = FastFood.find(item => item.id === id);
+    product = FastFood.find((item) => item.id === id);
   }
 
-  console.log(product.recipe);
+  console.log(product);
+
   return (
     <RecipeContainer
       as={motion.div}
       initial={{ x: -50, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
-      transition={{ duration: 0.5, type: 'spring', bounce: 0.5 }}
+      transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
       exit={{ x: -50, opacity: 0 }}
     >
       <Recipe
-        style={{ width: '45%', paddingLeft: '5px', paddingBottom: '5px' }}
+        style={{ width: "45%", paddingLeft: "5px", paddingBottom: "5px" }}
       >
         <RecipeList>
           <RecipeTitle>what?</RecipeTitle>
@@ -39,7 +40,7 @@ const FavoritesRecipe = ({ id }) => {
               <RecipeIndgredient>
                 <span
                   style={{
-                    marginRight: '2px',
+                    marginRight: "2px",
                   }}
                 >
                   <PiBowlFoodDuotone fill="grey" />
@@ -51,26 +52,27 @@ const FavoritesRecipe = ({ id }) => {
         </RecipeList>
       </Recipe>
       <Recipe
-        style={{ width: '55%', paddingRight: '5px', paddingBottom: '5px' }}
+        style={{ width: "55%", paddingRight: "5px", paddingBottom: "5px" }}
       >
-        <RecipeTitle>how?</RecipeTitle>{' '}
+        <RecipeTitle>how?</RecipeTitle>{" "}
         <RecipeSteps>
-          {product.recipe.map((item, i) => (
-            <RecipeListItem key={i}>
-              <RecipeIndgredient>
-                {' '}
-                <span
-                  style={{
-                    marginRight: '2px',
-                  }}
-                >
-                  <PiCookingPot fill="grey" />
-                  {'  '}
-                </span>
-                {item}
-              </RecipeIndgredient>
-            </RecipeListItem>
-          ))}
+          {product.recipe &&
+            product.recipe.map((item, i) => (
+              <RecipeListItem key={i}>
+                <RecipeIndgredient>
+                  {" "}
+                  <span
+                    style={{
+                      marginRight: "2px",
+                    }}
+                  >
+                    <PiCookingPot fill="grey" />
+                    {"  "}
+                  </span>
+                  {item}
+                </RecipeIndgredient>
+              </RecipeListItem>
+            ))}
         </RecipeSteps>
       </Recipe>
     </RecipeContainer>
