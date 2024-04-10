@@ -10,26 +10,26 @@ import { ContainerMain } from "./App.styled";
 import CartContextProvider from "./store/cart-context";
 import HeaderComponent from "./componets/Header/Header";
 import FavoritesPage from "componets/FavoritesPage/FavoritesPage";
-import { useEffect } from "react";
+//import { useEffect } from "react";
 
 function App() {
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          "https://cook-and-deliver-default-rtdb.asia-southeast1.firebasedatabase.app/asian.json"
-        );
-        const data = await response.json();
-        console.log(data); // Log the fetched data to the console
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch(
+  //         "https://cook-and-deliver-default-rtdb.asia-southeast1.firebasedatabase.app/asian.json"
+  //       );
+  //       const data = await response.json();
+  //       console.log(data); // Log the fetched data to the console
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   };
 
-    fetchData();
+  //   fetchData();
 
-    // No cleanup needed, so no return statement here
-  }, []);
+  //   // No cleanup needed, so no return statement here
+  // }, []);
 
   return (
     <CartContextProvider>
