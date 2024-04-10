@@ -1146,3 +1146,6 @@ export const ASIAN_DISH = [
       "Let’s shake up your night with our Bo Luc Lac!! Yes, it’s in the name. This popular Vietnamese shaking beef is a beloved stir fry dish that comes sizzling hot to the table. Bo Luc Lac could be your salad appetizer over a bed of lettuce or watercress with fresh tomatoes and cucumber, or it can be a complete meal with their favorite red tomato rice and fried eggs.",
   },
 ];
+
+const newAsian = JSON.stringify(ASIAN_DISH);
+console.log(newAsian);
