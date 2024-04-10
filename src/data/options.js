@@ -1,5 +1,5 @@
 export const options = [
-  { value: "all", label: "All" },
+  // { value: "all", label: "All" },
   { value: "spicy", label: "Spicy" },
   { value: "vegeterian", label: "Vegeterian" },
   { value: "chicken", label: "Chicken" },

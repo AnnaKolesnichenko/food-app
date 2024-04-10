@@ -35,6 +35,9 @@ import thaiShrimp from "../data/images/Shrimp-Chow-Mein-18-Edit.jpg";
 import vietnamese from "../data/images/Vietnamese_Chicken_Curry_with_Potatoes_Recipe-1.jpg";
 import wonton from "../data/images/Wonton-Soup-15-1200x1800.webp";
 
+//8RXm*pnt8swPwg%
+//AnnaK
+
 import { v4 as uuidv4 } from "uuid";
 
 export const ASIAN_DISH = [
