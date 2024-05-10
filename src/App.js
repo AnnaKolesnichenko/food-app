@@ -64,7 +64,7 @@ function App() {
           <Route path="/" element={<MainPage />} />
           <Route path="/sushi" element={<SushiPage />} />
           <Route path="/pizza" element={<FastFoodPage />} />
-          <Route path="/salads" element={<Responsive />} />
+          <Route path="/salads" element={<SaladsPage />} />
           <Route path="/favorites" element={<FavoritesPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
