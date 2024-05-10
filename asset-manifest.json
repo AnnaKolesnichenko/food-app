@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/food-app/static/css/main.54e65759.css",
-    "main.js": "/food-app/static/js/main.b14bcf6d.js",
+    "main.css": "/food-app/static/css/main.b0376c79.css",
+    "main.js": "/food-app/static/js/main.32e9b770.js",
     "static/media/ground-turkey-stir-fry-recipe_jpeg": "/food-app/static/media/ground-turkey-stir-fry-recipe_2c018df3966aff7e9d5669c2ea0b2162.163f333c81d814085f47.jpeg",
     "static/media/Beef_stir.jpg": "/food-app/static/media/Beef_stir.b1bf53db9906f0428791.jpg",
     "static/media/Bo_Luc.jpeg": "/food-app/static/media/Bo_Luc.7e2a8b95d72850dec054.jpeg",
@@ -60,12 +60,16 @@
     "static/media/Sweet-and-Sour-Pork_7-SQ.webp": "/food-app/static/media/Sweet-and-Sour-Pork_7-SQ.45e6a45e236376362463.webp",
     "static/media/b.jpeg": "/food-app/static/media/b.43548c9f343bc48f5ffe.jpeg",
     "static/media/re2.jpeg": "/food-app/static/media/re2.7e66071e94fc072a8b9d.jpeg",
+    "static/media/slick.svg": "/food-app/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/food-app/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/food-app/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/food-app/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/food-app/index.html",
-    "main.54e65759.css.map": "/food-app/static/css/main.54e65759.css.map",
-    "main.b14bcf6d.js.map": "/food-app/static/js/main.b14bcf6d.js.map"
+    "main.b0376c79.css.map": "/food-app/static/css/main.b0376c79.css.map",
+    "main.32e9b770.js.map": "/food-app/static/js/main.32e9b770.js.map"
   },
   "entrypoints": [
-    "static/css/main.54e65759.css",
-    "static/js/main.b14bcf6d.js"
+    "static/css/main.b0376c79.css",
+    "static/js/main.32e9b770.js"
   ]
 }
