@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 
 export const Container = styled.div`
-  height: 500px;
+  height: 900px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -29,6 +29,7 @@ export const StyledLink = styled(motion(NavLink))`
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 20px;
+  cursor: pointer;
 
   &:hover {
     background-color: transparent;
@@ -55,10 +56,21 @@ export const SliderMenuTitle = styled.h2`
 `;
 
 export const WhiteBackground = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left: 0;
+  margin-top: 900px;
   background-color: white;
-  width: 100%;
-  padding-top: 20px; /* Adjust padding as needed */
-  padding-bottom: 20px; /* Adjust padding as needed */
+`;
 
-  margin-top: 500px;
+export const InformativeBlock = styled.div`
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
 `;
