@@ -1,9 +1,9 @@
-import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import styled from "styled-components";
+import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export const Container = styled.div`
-  height: 100vh;
+  height: 500px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -23,7 +23,7 @@ export const StyledLink = styled(motion(NavLink))`
   border: none;
   font-size: 28px;
   font-weight: bold;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   color: #fefae3;
   text-decoration: none;
   text-align: center;
@@ -43,4 +43,22 @@ export const StyledLink = styled(motion(NavLink))`
     border-bottom: 2px solid #e37f19;
     border-width: 90%;
   }
+`;
+
+export const SliderMenuTitle = styled.h2`
+  margin: 0;
+  margin-top: 60px;
+  margin-left: 40px;
+  color: grey;
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+`;
+
+export const WhiteBackground = styled.div`
+  background-color: white;
+  width: 100%;
+  padding-top: 20px; /* Adjust padding as needed */
+  padding-bottom: 20px; /* Adjust padding as needed */
+
+  margin-top: 500px;
 `;
