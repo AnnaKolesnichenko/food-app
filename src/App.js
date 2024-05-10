@@ -10,7 +10,7 @@ import { ContainerMain } from "./App.styled";
 import CartContextProvider from "./store/cart-context";
 import HeaderComponent from "./componets/Header/Header";
 import FavoritesPage from "componets/FavoritesPage/FavoritesPage";
-import Responsive from "./componets/SaladsPage/SaladsPage";
+
 //import { useEffect } from "react";
 
 function App() {
