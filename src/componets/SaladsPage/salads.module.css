@@ -1,0 +1,39 @@
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  box-sizing: content-box;
+  min-width: 171px;
+  padding: 0;
+  border: none;
+  border-radius: 16px;
+  background-color: white;
+}
+
+.upperContent {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  min-width: 171px;
+  text-align: left;
+}
+
+.bottomContent {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  min-width: 171px;
+  text-align: right;
+}
+
+.spanText {
+  display: inline-block;
+  width: auto;
+  padding: 10px;
+  border-radius: 16px;
+  color: #6f707a;
+}
+
+.borderSt {
+  border: 1px solid #f1f1f1;
+}

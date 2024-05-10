@@ -3,6 +3,7 @@ import { Container, FavoritesList } from "./FavoritesPage.styled";
 
 import FavoritesItem from "./FavoritesItem";
 import { useSelector } from "react-redux";
+import DescriptiveBtn from "componets/SaladsPage/SaladsPage";
 
 const FavoritesPage = () => {
   // const favoritesContext = useContext(CartContext);
