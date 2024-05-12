@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
+import TeachersBold from "../../data/fonts/Teachers-Bold.ttf";
 
 export const Container = styled.div`
   height: 900px;
@@ -49,10 +50,18 @@ export const StyledLink = styled(motion(NavLink))`
 export const SliderMenuTitle = styled.h2`
   margin: 0;
   margin-top: 60px;
-  margin-left: 40px;
+  margin-left: 20px;
+  margin-bottom: 20px;
   color: grey;
-  font-family: "Raleway", sans-serif;
-  font-size: 20px;
+  font-family: "Teachers", sans-serif;
+  font-size: 22px;
+
+  @font-face {
+    font-family: "Teachers";
+    src: url(${TeachersBold}) format("ttf");
+    font-weight: bold;
+    font-style: normal;
+  }
 `;
 
 export const WhiteBackground = styled.div`
@@ -64,7 +73,7 @@ export const WhiteBackground = styled.div`
   padding-bottom: 20px;
   margin-left: 0;
   margin-top: 900px;
-  background-color: white;
+  background-color: #1c180a;
 `;
 
 export const InformativeBlock = styled.div`

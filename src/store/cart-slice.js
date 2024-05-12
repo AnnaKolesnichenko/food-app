@@ -15,7 +15,7 @@ const cartSlice = createSlice({
       let product = ASIAN_DISH.find((item) => item.id === id);
 
       if (!product) {
-        FastFood.find((item) => item.id === id);
+        product = FastFood.find((item) => item.id === id);
       }
 
       if (product) {
@@ -30,6 +30,7 @@ const cartSlice = createSlice({
         alert("There is no such product");
       }
     },
+
     handleIncreaseItem(state, action) {
       const id = action.payload;
       const item = state.items.find((item) => item.id === id);

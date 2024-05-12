@@ -19,7 +19,7 @@ const MainPage = () => {
   const favourites = useSelector((state) => state.liked.itemsLiked);
   console.log(favourites.length);
   return (
-    <div style={{ height: "100vh" }}>
+    <div>
       <Container
         style={{
           backgroundImage: `url(${Background})`,
@@ -60,18 +60,19 @@ const MainPage = () => {
       <WhiteBackground>
         <InformativeBlock>
           <OurBenefits />
+
+          <SliderMenuTitle>Flavours of the East</SliderMenuTitle>
+          <SliderResponsive items={ASIAN_DISH} />
+
+          <SliderMenuTitle>Burgers & Grill</SliderMenuTitle>
+          <SliderResponsive items={FastFood} />
+
+          <SliderMenuTitle>Any of Your Choice?</SliderMenuTitle>
+          {favourites && <SliderResponsive items={favourites} />}
+          {favourites.length === 0 && (
+            <p>Add something you like, do not be shy!!</p>
+          )}
         </InformativeBlock>
-        <SliderMenuTitle>Flavours of the East</SliderMenuTitle>
-        <SliderResponsive items={ASIAN_DISH} />
-
-        <SliderMenuTitle>Burgers & Grill</SliderMenuTitle>
-        <SliderResponsive items={FastFood} />
-
-        <SliderMenuTitle>Any of Your Choice?</SliderMenuTitle>
-        {favourites && <SliderResponsive items={favourites} />}
-        {favourites.length === 0 && (
-          <p>Add something you like, do not be shy!!</p>
-        )}
       </WhiteBackground>
     </div>
   );
