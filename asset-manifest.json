@@ -1,11 +1,10 @@
 {
   "files": {
     "main.css": "/food-app/static/css/main.fc0c46b8.css",
-    "main.js": "/food-app/static/js/main.a0d04875.js",
+    "main.js": "/food-app/static/js/main.4ee7fad9.js",
     "static/media/ground-turkey-stir-fry-recipe_jpeg": "/food-app/static/media/ground-turkey-stir-fry-recipe_2c018df3966aff7e9d5669c2ea0b2162.163f333c81d814085f47.jpeg",
     "static/media/Beef_stir.jpg": "/food-app/static/media/Beef_stir.b1bf53db9906f0428791.jpg",
     "static/media/Bo_Luc.jpeg": "/food-app/static/media/Bo_Luc.7e2a8b95d72850dec054.jpeg",
-    "static/media/food.jpeg": "/food-app/static/media/food.2a64f768a0ca33213aec.jpeg",
     "static/media/Green_noodles.avif": "/food-app/static/media/Green_noodles.830da99305b668d7e9b3.avif",
     "static/media/beijing-beef-panda-express-recipe-photo-tablefortwoblog-10-scaled.jpg": "/food-app/static/media/beijing-beef-panda-express-recipe-photo-tablefortwoblog-10-scaled.8f804f06b93f47800c83.jpg",
     "static/media/asian_rice_bowl.jpeg": "/food-app/static/media/asian_rice_bowl.183f1af55c089e1cb325.jpeg",
@@ -59,11 +58,12 @@
     "static/media/Dragon-Roll-0293-II.jpg": "/food-app/static/media/Dragon-Roll-0293-II.38b49e6fc0c89ff1f749.jpg",
     "static/media/thai-coconut-shrimp-curry-1-f0a39bc9-480x721.jpg": "/food-app/static/media/thai-coconut-shrimp-curry-1-f0a39bc9-480x721.5f560755936955196536.jpg",
     "static/media/Sweet-and-Sour-Pork_7-SQ.webp": "/food-app/static/media/Sweet-and-Sour-Pork_7-SQ.45e6a45e236376362463.webp",
-    "static/media/f.jpeg": "/food-app/static/media/f.4b06ab0ad491f5194b43.jpeg",
+    "static/media/cook-yourself.png": "/food-app/static/media/cook-yourself.b71ba7d3d01ff2dd3568.png",
+    "static/media/food-dl.png": "/food-app/static/media/food-dl.e40009a3045f3b6548f4.png",
+    "static/media/cook-it.png": "/food-app/static/media/cook-it.d4f57c29da00233e35d6.png",
     "static/media/Teachers-Medium.ttf": "/food-app/static/media/Teachers-Medium.1db0fd44db8c54ebae64.ttf",
     "static/media/Teachers-Bold.ttf": "/food-app/static/media/Teachers-Bold.9784aa67bcd0de415a52.ttf",
-    "static/media/online.jpeg": "/food-app/static/media/online.cde6a48db245cbd6eeae.jpeg",
-    "static/media/de.webp": "/food-app/static/media/de.765839202857f6aa1418.webp",
+    "static/media/order-it.png": "/food-app/static/media/order-it.a5c3f23fef3242cacd7b.png",
     "static/media/b.jpeg": "/food-app/static/media/b.43548c9f343bc48f5ffe.jpeg",
     "static/media/re2.jpeg": "/food-app/static/media/re2.7e66071e94fc072a8b9d.jpeg",
     "static/media/slick.svg": "/food-app/static/media/slick.2630a3e3eab21c607e21.svg",
@@ -72,10 +72,10 @@
     "static/media/slick.woff": "/food-app/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/food-app/index.html",
     "main.fc0c46b8.css.map": "/food-app/static/css/main.fc0c46b8.css.map",
-    "main.a0d04875.js.map": "/food-app/static/js/main.a0d04875.js.map"
+    "main.4ee7fad9.js.map": "/food-app/static/js/main.4ee7fad9.js.map"
   },
   "entrypoints": [
     "static/css/main.fc0c46b8.css",
-    "static/js/main.a0d04875.js"
+    "static/js/main.4ee7fad9.js"
   ]
 }
