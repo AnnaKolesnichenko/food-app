@@ -14,6 +14,7 @@ import SliderResponsive from "./Slider/Slider";
 import { FastFood } from "data/available-meals";
 import { useSelector } from "react-redux";
 import OurBenefits from "./OurBenefits/OurBenefits";
+import DailyPick from "./DailyPick/DailyPick";
 
 const MainPage = () => {
   const favourites = useSelector((state) => state.liked.itemsLiked);
@@ -61,17 +62,12 @@ const MainPage = () => {
         <InformativeBlock>
           <OurBenefits />
 
+          <DailyPick />
           <SliderMenuTitle>Flavours of the East</SliderMenuTitle>
           <SliderResponsive items={ASIAN_DISH} />
 
           <SliderMenuTitle>Burgers & Grill</SliderMenuTitle>
           <SliderResponsive items={FastFood} />
-
-          <SliderMenuTitle>Any of Your Choice?</SliderMenuTitle>
-          {favourites && <SliderResponsive items={favourites} />}
-          {favourites.length === 0 && (
-            <p>Add something you like, do not be shy!!</p>
-          )}
         </InformativeBlock>
       </WhiteBackground>
     </div>

@@ -76,7 +76,7 @@ export const ASIAN_DISH = [
     image: asianRiceBowl,
     title: "Ground Chicken Bowl",
     price: 23.99,
-    characteristic: ["rice", "chicken"],
+    characteristic: ["rice", "chicken", "vegetable mix"],
     cuisine: ["all asian"],
     ingredients: [
       "1 lb ground chicken",
@@ -96,14 +96,14 @@ export const ASIAN_DISH = [
       "Enjoy your quick and tasty ground chicken bowl!",
     ],
     description:
-      "This easy Pork Stir Fry whips up in no time. Loaded with fresh veggies and tender pork, it’s a perfect weeknight dinner idea!",
+      "This easy Chicken Stir Fry whips up in no time. Loaded with fresh veggies and tender pork, it’s a perfect weeknight dinner idea!",
   },
   {
     id: uuidv4(),
     image: veggieNoodle,
     title: "Greens Soba",
     price: 22,
-    characteristic: ["vegeterian", "noodles"],
+    characteristic: ["vegeterian", "noodles", "green beans"],
     cuisine: ["japanese"],
     ingredients: [
       "200g soba noodles",
@@ -207,7 +207,7 @@ export const ASIAN_DISH = [
     image: asianCucumber,
     title: "Green Dragon Roll",
     price: 13.99,
-    characteristic: ["rice", "seafood", "shrimp"],
+    characteristic: ["rice", "seafood", "shrimp", "sushi"],
     cuisine: ["japanese"],
     ingredients: [
       "Nori (seaweed) sheets",
@@ -234,7 +234,7 @@ export const ASIAN_DISH = [
     image: asianShrimp,
     title: "Shirmp and Noodle",
     price: 26.99,
-    characteristic: ["noodles", "seafood", "shrimp"],
+    characteristic: ["noodles", "seafood", "shrimp", "vegetables"],
     cuisine: ["all asian"],
     ingredients: [
       "8 oz rice noodles",

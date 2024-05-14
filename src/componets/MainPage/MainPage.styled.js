@@ -49,12 +49,12 @@ export const StyledLink = styled(motion(NavLink))`
 
 export const SliderMenuTitle = styled.h2`
   margin: 0;
-  margin-top: 60px;
+  margin-top: 40px;
   margin-left: 20px;
   margin-bottom: 20px;
   color: grey;
   font-family: "Teachers", sans-serif;
-  font-size: 22px;
+  font-size: 26px;
 
   @font-face {
     font-family: "Teachers";
@@ -73,7 +73,8 @@ export const WhiteBackground = styled.div`
   padding-bottom: 20px;
   margin-left: 0;
   margin-top: 900px;
-  background-color: #1c180a;
+  background-color: white;
+  z-index: -1;
 `;
 
 export const InformativeBlock = styled.div`

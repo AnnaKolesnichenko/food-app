@@ -3,7 +3,7 @@ import TeachersBold from "../../../data/fonts/Teachers-Bold.ttf";
 
 export const SliderContainer = styled.div`
   margin-top: 10px;
-  background-color: #1c180a;
+  background-color: white;
   width: 100%;
   margin-right: auto;
   margin-left: auto;
@@ -48,9 +48,10 @@ export const SliderImage = styled.img`
 `;
 
 export const SliderText = styled.h3`
-  text-align: center;
+  text-align: left;
   position: absolute;
   bottom: 10px;
+  left: 3px;
   color: white;
   font-family: "Teachers", sans-serif;
   z-index: 10;

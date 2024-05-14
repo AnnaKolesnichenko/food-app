@@ -11,14 +11,27 @@ import {
 import { motion } from "framer-motion";
 
 const SliderResponsive = ({ items }) => {
+  const CustomArrow = ({ className, style, onClick }) => (
+    <button
+      className={className}
+      style={{
+        ...style,
+        backgroundColor: "grey",
+        width: "20px",
+        height: "20px",
+        borderRadius: "100px",
+      }}
+      onClick={onClick}
+    ></button>
+  );
   var settings = {
     dots: true,
     infinite: false,
-    speed: 500,
+    speed: 1500,
     slidesToShow: 5,
-    slidesToScroll: 5,
-    // autoplay: true,
-    // autoplaySpeed: 2000,
+    slidesToScroll: 2,
+    prevArrow: <CustomArrow />,
+    nextArrow: <CustomArrow />,
     initialSlide: 0,
     responsive: [
       {

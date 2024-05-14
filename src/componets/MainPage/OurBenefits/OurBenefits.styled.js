@@ -6,10 +6,10 @@ export const WhyUsParag = styled.p`
   margin: 0;
   margin-left: 20px;
   margin-bottom: 20px;
-  margin-top: 30px;
+  margin-top: 100px;
   color: grey;
   font-family: "Teachers", sans-serif;
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 600;
   text-transform: capitalize;
 
@@ -37,13 +37,13 @@ export const BenefitItem = styled.li`
   justify-content: center;
   align-items: center;
   gap: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 10px;
   width: calc((100% - 30px) / 4);
   height: 200px;
   overflow: hidden;
   border-radius: 16px;
   box-shadow: 2px 3px 5px 6px rgba(198, 198, 196, 0.3);
+  background-color: white;
 `;
 
 export const BenefitP = styled.p`
@@ -65,5 +65,17 @@ export const BenefitP = styled.p`
 export const BenefitImg = styled.img`
   border-radius: 16px;
   width: 100px;
-  height: 80px;
+  height: 100px;
+`;
+
+export const Decorate = styled.div`
+  position: absolute;
+  bottom: 50px;
+  left: -150px;
+  width: 100%;
+  height: 500px;
+  background-color: green;
+
+  opacity: 0.3;
+  z-index: 0;
 `;
