@@ -21,4 +21,8 @@ export const StyledSelects = styled.div`
   width: 100%;
   gap: 30px;
   justify-content: flex-start;
+  @media (max-width: 1280px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `;

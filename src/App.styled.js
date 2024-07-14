@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion';
-import { Link, NavLink } from 'react-router-dom';
-import styled from 'styled-components';
+import { motion } from "framer-motion";
+import { Link, NavLink } from "react-router-dom";
+import styled from "styled-components";
 
 export const ContainerMain = styled.div`
   max-width: 1024px;
@@ -21,6 +21,7 @@ export const NavigationContainer = styled.nav`
   align-items: center;
   justify-content: space-between;
   padding: 22px 0;
+  margin-bottom: 50px;
 `;
 
 export const StyledNavLinkMenu = styled(motion(NavLink))`
@@ -28,7 +29,7 @@ export const StyledNavLinkMenu = styled(motion(NavLink))`
   color: #fefae3;
   font-size: 12px;
   font-weight: bold;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
   padding-top: 7px;
@@ -52,7 +53,7 @@ export const StyledNavLink = styled(Link)`
   color: #fefae3;
   font-size: 24px;
   font-weight: bold;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   text-transform: uppercase;
   letter-spacing: 10px;
   padding-top: 7px;

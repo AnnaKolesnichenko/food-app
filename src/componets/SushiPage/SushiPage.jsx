@@ -57,10 +57,10 @@ const SushiPage = () => {
   const customStyledSelect = {
     control: (provided, state) => ({
       ...provided,
-      "width": "240px",
+      "width": "500px",
       "marginLeft": "auto",
       "marginRight": "auto",
-      "marginTop": "50px",
+      // "marginTop": "50px",
       "backgroundColor": "#D5CFC7",
       "borderRadius": "15px",
       "color": "#1C180A",

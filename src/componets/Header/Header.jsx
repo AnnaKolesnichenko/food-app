@@ -107,6 +107,13 @@ const HeaderComponent = () => {
           >
             {<AiOutlineLike />}
           </StyledNavLinkMenu>
+          <StyledNavLinkMenu
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 500 }}
+            to="/deals"
+          >
+            deals{" "}
+          </StyledNavLinkMenu>{" "}
           <Button
             as={motion.button}
             whileHover={{ scale: 1.1 }}
