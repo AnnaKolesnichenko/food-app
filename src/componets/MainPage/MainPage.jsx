@@ -15,6 +15,7 @@ import { FastFood } from "data/available-meals";
 import { useSelector } from "react-redux";
 import OurBenefits from "./OurBenefits/OurBenefits";
 import DailyPick from "./DailyPick/DailyPick";
+import Deals from "./Deals/Deals";
 import { AnimatePresence } from "framer-motion";
 import ModalAbout from "componets/ModalAbout/ModalAbout";
 
@@ -77,6 +78,7 @@ const MainPage = () => {
       <WhiteBackground>
         <InformativeBlock>
           <DailyPick handleOpenModal={handleOpenModal} />
+          <Deals />
           <SliderMenuTitle>Flavours of the East</SliderMenuTitle>
           <SliderResponsive items={ASIAN_DISH} />
 
