@@ -16,7 +16,7 @@ import delivery from "../../../data/svg/food-dl.png";
 const OurBenefits = () => {
   return (
     <div style={{ position: "relative", minHeight: "500px" }}>
-      <Decorate></Decorate>
+      {/* <Decorate></Decorate> */}
 
       <div style={{ zIndex: "1", position: "relative" }}>
         <WhyUsParag>why choose us?</WhyUsParag>

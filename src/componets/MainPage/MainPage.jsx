@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import {
   Container,
@@ -15,17 +15,33 @@ import { FastFood } from "data/available-meals";
 import { useSelector } from "react-redux";
 import OurBenefits from "./OurBenefits/OurBenefits";
 import DailyPick from "./DailyPick/DailyPick";
+import { AnimatePresence } from "framer-motion";
+import ModalAbout from "componets/ModalAbout/ModalAbout";
 
 const MainPage = () => {
   const favourites = useSelector((state) => state.liked.itemsLiked);
+  const [selectedItem, setSelectedItem] = useState(false);
   console.log(favourites.length);
+
+  const handleOpenModal = (id) => {
+    setSelectedItem(id);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedItem(null);
+  };
   return (
     <div>
+      <AnimatePresence>
+        {selectedItem && (
+          <ModalAbout id={selectedItem} handleCloseModal={handleCloseModal} />
+        )}
+      </AnimatePresence>
       <Container
         style={{
           backgroundImage: `url(${Background})`,
           backgroundSize: "cover",
-          height: "900px",
+          height: "500px",
           width: "100%",
           backgroundPosition: "center",
           position: "absolute",
@@ -60,14 +76,13 @@ const MainPage = () => {
       </Container>
       <WhiteBackground>
         <InformativeBlock>
-          <OurBenefits />
-
-          <DailyPick />
+          <DailyPick handleOpenModal={handleOpenModal} />
           <SliderMenuTitle>Flavours of the East</SliderMenuTitle>
           <SliderResponsive items={ASIAN_DISH} />
 
           <SliderMenuTitle>Burgers & Grill</SliderMenuTitle>
           <SliderResponsive items={FastFood} />
+          <OurBenefits />
         </InformativeBlock>
       </WhiteBackground>
     </div>

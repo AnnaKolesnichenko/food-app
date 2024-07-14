@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Backdrop = styled.div`
   position: fixed;
@@ -17,12 +17,9 @@ export const Backdrop = styled.div`
 `;
 
 export const Modal = styled.div`
-  /* position: fixed; */
   top: 50%;
-  /* left: 50%;
-  transform: translate(-50%, -50%); */
-
-  width: 550px;
+  width: 70%;
+  height: 50%;
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -39,7 +36,7 @@ export const Button = styled.button`
   padding: 5px 15px;
   border-radius: 7px;
   font-size: 12 4px;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: bold;
   letter-spacing: 0.4px;
   background-color: #d5cfc7;

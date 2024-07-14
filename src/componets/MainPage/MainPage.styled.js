@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import TeachersBold from "../../data/fonts/Teachers-Bold.ttf";
 
 export const Container = styled.div`
-  height: 900px;
+  height: 500px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -72,7 +72,7 @@ export const WhiteBackground = styled.div`
   padding-top: 20px;
   padding-bottom: 20px;
   margin-left: 0;
-  margin-top: 900px;
+  margin-top: 500px;
   background-color: white;
   z-index: -1;
 `;
@@ -80,7 +80,7 @@ export const WhiteBackground = styled.div`
 export const InformativeBlock = styled.div`
   padding-left: 20px;
   padding-right: 20px;
-  width: 1024px;
+  width: 70%;
   margin-left: auto;
   margin-right: auto;
 `;

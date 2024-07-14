@@ -1,25 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
 import { ASIAN_DISH } from "data/asian";
 import { FastFood } from "data/available-meals";
-import hot from "../../../data/svg/hottest.png";
+import hot from "../../../data/svg/fire.png";
+import {
+  HotImage,
+  HotsIcon,
+  HotsItem,
+  HotsList,
+  Fire,
+  HotText,
+  HotTitle,
+} from "./DailyPick.styled";
 
-const DailyPick = () => {
-  const asianRandom = Math.floor(Math.random() * ASIAN_DISH.length);
-  const fastRandom = Math.floor(Math.random() * FastFood.length);
+const DailyPick = ({ handleOpenModal }) => {
+  function getRandomItem(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
 
-  const existingAsianItem = ASIAN_DISH[asianRandom];
-  const existingFastItem = FastFood[fastRandom];
+  function getUniqueRandomItems(arr, count) {
+    const items = new Set();
+    while (items.size < count) {
+      items.add(getRandomItem(arr));
+    }
+    return Array.from(items);
+  }
 
-  const picked = Math.random() > 0.5 ? existingAsianItem : existingFastItem;
+  const uniqueAsianItems = getUniqueRandomItems(ASIAN_DISH, 3);
+  const uniqueFastItems = getUniqueRandomItems(FastFood, 3);
+
+  const picked = Math.random() > 0.5 ? uniqueAsianItems[0] : uniqueFastItems[0];
+  const picked1 =
+    Math.random() > 0.5 ? uniqueAsianItems[1] : uniqueFastItems[1];
+  const picked2 =
+    Math.random() > 0.5 ? uniqueAsianItems[2] : uniqueFastItems[2];
+
   return (
     <div>
-      <h3>Today's Pick</h3>
+      <HotTitle>Hot Pick of the Moment!</HotTitle>
 
-      <div>
-        <img src={hot} alt="hot icon" />
-        <img src={picked.image} alt="meal of the day" />
-        <p>{picked.title}</p>
-      </div>
+      <HotsList>
+        <HotsItem onClick={() => handleOpenModal(picked.id)}>
+          <Fire />
+          <HotImage src={picked.image} alt="meal of the day" />
+          <HotText>{picked.title}</HotText>
+        </HotsItem>
+        <HotsItem onClick={() => handleOpenModal(picked1.id)}>
+          <Fire />
+          <HotImage src={picked1.image} alt="meal of the day" />
+          <HotText>{picked1.title}</HotText>
+        </HotsItem>
+        <HotsItem
+          onClick={() => {
+            console.log(picked2.id);
+            handleOpenModal(picked2.id);
+          }}
+        >
+          <Fire />
+          <HotImage src={picked2.image} alt="meal of the day" />
+          <HotText>{picked2.title}</HotText>
+        </HotsItem>
+      </HotsList>
     </div>
   );
 };
