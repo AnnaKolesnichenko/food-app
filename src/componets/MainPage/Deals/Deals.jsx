@@ -1,7 +1,11 @@
 import React from "react";
 
 const Deals = () => {
-  return <div>DEALS of the day week and more</div>;
+  return (
+    <div>
+      <div></div>
+    </div>
+  );
 };
 
 export default Deals;
