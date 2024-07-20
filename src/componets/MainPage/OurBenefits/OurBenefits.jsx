@@ -5,10 +5,8 @@ import {
   BenefitItem,
   BenefitP,
   BenefitImg,
-  Decorate,
   BenefitsContainer,
 } from "./OurBenefits.styled";
-import { motion } from "framer-motion";
 
 import price from "../../../data/svg/order-it.png";
 import cuisine from "../../../data/svg/cook-it.png";

@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { ASIAN_DISH } from "data/asian";
 import { FastFood } from "data/available-meals";
-import hot from "../../../data/svg/fire.png";
+
 import {
   HotImage,
-  HotsIcon,
   HotsItem,
   HotsList,
   Fire,

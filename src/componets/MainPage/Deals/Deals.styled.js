@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { TbArrowBigRightLinesFilled } from "react-icons/tb";
+// import { TbArrowBigRightLinesFilled } from "react-icons/tb";
 import TeachersBold from "../../../data/fonts/Teachers-Bold.ttf";
 
 export const DealsContainer = styled.div`

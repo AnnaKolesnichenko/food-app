@@ -18,7 +18,6 @@ import { useEffect, useState } from "react";
 import coke from "../../data/deals/drink.webp";
 import rolls from "../../data/deals/sushi.jpg";
 import FreeItem from "./FreeItem";
-import { v4 as uuidv4 } from "uuid";
 
 const CartItems = () => {
   //const shopCnxt = useContext(CartContext);

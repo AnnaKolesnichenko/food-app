@@ -6,7 +6,6 @@ import {
   DealsImage,
   DealsTitle,
   GreenArrow,
-  ImageContainer,
 } from "./Deals.styled";
 
 import { SiFireship } from "react-icons/si";
