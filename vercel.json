@@ -11,8 +11,8 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "src": "/food-app/(.*)",
+      "dest": "/food-app/index.html"
     }
   ]
 }
