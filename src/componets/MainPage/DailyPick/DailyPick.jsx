@@ -11,6 +11,7 @@ import {
   HotText,
   HotTitle,
 } from "./DailyPick.styled";
+import { FaPepperHot } from "react-icons/fa6";
 
 const DailyPick = ({ handleOpenModal }) => {
   function getRandomItem(arr) {
@@ -36,7 +37,9 @@ const DailyPick = ({ handleOpenModal }) => {
 
   return (
     <div>
-      <HotTitle>Hot Pick of the Moment!</HotTitle>
+      <HotTitle>
+        Hot Pick of the Moment! <FaPepperHot color="red" />
+      </HotTitle>
 
       <HotsList>
         <HotsItem onClick={() => handleOpenModal(picked.id)}>

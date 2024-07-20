@@ -18,6 +18,9 @@ import DailyPick from "./DailyPick/DailyPick";
 import Deals from "./Deals/Deals";
 import { AnimatePresence } from "framer-motion";
 import ModalAbout from "componets/ModalAbout/ModalAbout";
+import { LuJapaneseYen } from "react-icons/lu";
+import { GiHamburger } from "react-icons/gi";
+import SubscriptionArea from "./SubscriptionArea/SubscriptionArea";
 
 const MainPage = () => {
   const favourites = useSelector((state) => state.liked.itemsLiked);
@@ -57,7 +60,7 @@ const MainPage = () => {
             transition={{ duration: 3, type: "spring", bounce: 0.7 }}
             to="/sushi"
           >
-            asian food
+            asian tunes
           </StyledLink>
           <StyledLink
             whileHover={{ y: -20 }}
@@ -71,19 +74,30 @@ const MainPage = () => {
             transition={{ duration: 3, type: "spring", bounce: 0.7 }}
             to="/salads"
           >
-            simple food
+            simple organic
           </StyledLink>
         </LinkContainer>
+        <SubscriptionArea />
       </Container>
       <WhiteBackground>
         <InformativeBlock>
-          <DailyPick handleOpenModal={handleOpenModal} />
-          <Deals />
-          <SliderMenuTitle>Flavours of the East</SliderMenuTitle>
+          <AnimatePresence>
+            <DailyPick handleOpenModal={handleOpenModal} />
+          </AnimatePresence>
+          <AnimatePresence>
+            <Deals />
+          </AnimatePresence>
+          <SliderMenuTitle>
+            Flavours of the East
+            <LuJapaneseYen />
+          </SliderMenuTitle>
           <SliderResponsive items={ASIAN_DISH} />
 
-          <SliderMenuTitle>Burgers & Grill</SliderMenuTitle>
+          <SliderMenuTitle>
+            Burgers & Grill <GiHamburger />
+          </SliderMenuTitle>
           <SliderResponsive items={FastFood} />
+
           <OurBenefits />
         </InformativeBlock>
       </WhiteBackground>

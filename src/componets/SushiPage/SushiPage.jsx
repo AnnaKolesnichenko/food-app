@@ -3,7 +3,7 @@ import { useState } from "react";
 import Select from "react-select";
 //import sushiBg from "../../data/assets/asian.jpeg";
 import { ASIAN_DISH } from "../../data/asian";
-import FoodItem from "./FoodItem";
+import FoodItemComponent from "../../componets/UI/FoodItemComponent/FoodItemComponent";
 import { ListItems, Container, Selected } from "./SushiPage.styled";
 import { options, regions } from "../../data/options";
 import { AnimatePresence, motion } from "framer-motion";
@@ -57,7 +57,7 @@ const SushiPage = () => {
   const customStyledSelect = {
     control: (provided, state) => ({
       ...provided,
-      "width": "500px",
+      "width": "260px",
       "marginLeft": "auto",
       "marginRight": "auto",
       // "marginTop": "50px",
@@ -73,6 +73,8 @@ const SushiPage = () => {
 
     menu: (provided, state) => ({
       ...provided,
+      marginLeft: "auto",
+      marginRight: "auto",
       fontFamily: "Raleway, sans-serif",
       backgroundColor: "#f2f2f2",
       borderRadius: "4px",
@@ -149,7 +151,7 @@ const SushiPage = () => {
         }}
       >
         {itemsFiltered.map((item) => (
-          <FoodItem
+          <FoodItemComponent
             key={item.id}
             item={item}
             handleOpenModal={handleOpenModal}

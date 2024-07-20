@@ -18,14 +18,15 @@ export const Backdrop = styled.div`
 
 export const Modal = styled.div`
   top: 50%;
-  width: 70%;
-  height: 50%;
+  width: 50%;
+  max-height: 80vh;
   background: #fff;
   display: flex;
   flex-direction: column;
   padding: 20px;
   border-radius: 4px;
   z-index: 100;
+  overflow: auto;
   //transition: opacity 250ms ease-in-out;
 `;
 

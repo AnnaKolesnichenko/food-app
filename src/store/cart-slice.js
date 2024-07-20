@@ -4,6 +4,7 @@ import { FastFood } from "data/available-meals";
 
 const initialState = {
   items: [],
+  freeItems: [],
 };
 
 const cartSlice = createSlice({
@@ -50,8 +51,18 @@ const cartSlice = createSlice({
         }
       }
     },
+    addFreeItem(state, action) {
+      const newItem = action.payload;
+      state.freeItems.push(newItem); // Add new free item to the freeItems array
+    },
+    removeFreeItem(state, action) {
+      const id = action.payload;
+      state.freeItems = state.freeItems.filter((item) => item.id !== id);
+    },
+
     clearCart(state, action) {
       state.items = [];
+      state.freeItems = [];
     },
   },
 });
@@ -63,5 +74,7 @@ export const {
   handleDecreaseItem,
   handleIncreaseItem,
   clearCart,
+  addFreeItem,
+  removeFreeItem,
 } = cartSlice.actions;
 export const CartReducer = cartSlice.reducer;

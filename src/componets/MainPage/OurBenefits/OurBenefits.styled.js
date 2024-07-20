@@ -21,6 +21,17 @@ export const WhyUsParag = styled.p`
   }
 `;
 
+export const BenefitsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  border: 1px solid grey;
+  border-radius: 100px;
+  overflow: hidden;
+`;
+
 export const BenefitsList = styled.ul`
   list-style: none;
   padding: 0;
@@ -28,7 +39,8 @@ export const BenefitsList = styled.ul`
   display: flex;
   flex-direction: row;
   gap: 15px;
-  margin-bottom: 80px;
+  /* width: 90%; */
+  /* margin-bottom: 80px; */
 `;
 
 export const BenefitItem = styled.li`
@@ -39,11 +51,20 @@ export const BenefitItem = styled.li`
   gap: 15px;
   padding: 10px;
   width: calc((100% - 30px) / 4);
-  height: 300px;
+  height: 250px;
   overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 2px 3px 5px 6px rgba(198, 198, 196, 0.3);
+  border-radius: 50px;
+  /* border-radius: 16px;
+  box-shadow: 2px 3px 5px 6px rgba(198, 198, 196, 0.3); */
   background-color: white;
+  transition: all ease-in-out 2s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: pink;
+    transform: background-color;
+    transform: scale(1.1);
+  }
 `;
 
 export const BenefitP = styled.p`
@@ -53,6 +74,7 @@ export const BenefitP = styled.p`
   color: grey;
   font-family: "Teachers", sans-serif;
   font-size: 18px;
+  z-index: 1000;
 
   @font-face {
     font-family: "Teachers";
@@ -66,6 +88,7 @@ export const BenefitImg = styled.img`
   border-radius: 16px;
   width: 130px;
   height: 130px;
+  z-index: 1000;
 `;
 
 export const Decorate = styled.div`

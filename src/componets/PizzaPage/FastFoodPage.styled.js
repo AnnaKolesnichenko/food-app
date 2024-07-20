@@ -11,7 +11,7 @@ export const ListItems = styled.ul`
   margin-right: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 20px;
 `;
 

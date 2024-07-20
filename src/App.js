@@ -11,6 +11,7 @@ import CartContextProvider from "./store/cart-context";
 import HeaderComponent from "./componets/Header/Header";
 import FavoritesPage from "componets/FavoritesPage/FavoritesPage";
 import PromotionsPage from "componets/PromotionsPage/PromotionsPage";
+import SimplePage from "./componets/SaladsPage/SaladsPage";
 
 //import { useEffect } from "react";
 
@@ -65,7 +66,7 @@ function App() {
           <Route path="/" element={<MainPage />} />
           <Route path="/sushi" element={<SushiPage />} />
           <Route path="/pizza" element={<FastFoodPage />} />
-          <Route path="/salads" element={<SaladsPage />} />
+          <Route path="/salads" element={<SimplePage />} />
           <Route path="/deals" element={<PromotionsPage />} />
           <Route path="/favorites" element={<FavoritesPage />} />
           <Route path="*" element={<NotFound />} />

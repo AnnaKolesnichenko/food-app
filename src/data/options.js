@@ -45,3 +45,25 @@ export const characteristics = [
   { value: "shrimp", label: "Shrimp" },
   { value: "dessert", label: "Dessert" },
 ];
+
+export const salads = [
+  { value: "vegetables", label: "Vegetables" },
+  { value: "meat", label: "Meat" },
+  { value: "asian", label: "Asian" },
+  { value: "seafood", label: "Seafood" },
+  { value: "mixed", label: "Mixed" },
+];
+
+export const saladIngredients = [
+  { value: "vegetable", label: "Vegetable" },
+  { value: "chicken", label: "Chicken" },
+  { value: "rice", label: "Rice" },
+  { value: "beef", label: "Beef" },
+  { value: "seafood", label: "Seafood" },
+  { value: "shrimp", label: "Shrimp" },
+  { value: "salmon", label: "Salmon" },
+  { value: "vinegar", label: "Vinegar" },
+  { value: "honey", label: "Honey" },
+  { value: "olive", label: "Olive oil" },
+  { value: "spicy", label: "Spicy" },
+];

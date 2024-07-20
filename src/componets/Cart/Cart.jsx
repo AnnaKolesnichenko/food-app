@@ -22,10 +22,6 @@ const Cart = ({ handleCloseButton, handleCheckOutOpen }) => {
     setTotalCost(total);
   }, [items]);
 
-  // const handleCheckoutOoen = () => {
-
-  // }
-
   return (
     <Backdrop>
       <Modal
@@ -56,6 +52,8 @@ const Cart = ({ handleCloseButton, handleCheckOutOpen }) => {
           </h1>
           <div>
             {items.length > 0 ? <CartItems /> : <p>Your Cart is Empty!</p>}
+            {/* {quantity >= 2 && <p>Coke is added</p>}
+            {quantity >= 4 && <p>Best rolls set is added</p>} */}
           </div>
         </div>
         <div>

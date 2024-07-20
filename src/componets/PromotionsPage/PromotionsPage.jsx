@@ -4,10 +4,16 @@ import {
   Background,
   DealAbout,
   Deals,
+  DealsDescr,
   DealsTitle,
   MainDealsTitle,
+  DealsList,
+  DealArrow,
 } from "./PromotionsPage.styled";
 import { useSelector } from "react-redux";
+
+import { FaLongArrowAltRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const PromotionsPage = () => {
   const deals = useSelector((state) => state.deals.deals);
@@ -15,21 +21,29 @@ const PromotionsPage = () => {
   return (
     <Deals>
       <MainDealsTitle>
-        Here would be the best sales and Deals of the day and week
+        Check with what's new and refreshing here... Be tuned with more deals to
+        come!
       </MainDealsTitle>
-      <ul>
-        {deals.map((deal) => (
-          <li>
-            <Background>
-              <BackImage src={deal.image} alt={deal.title} />
-              <DealAbout>
-                <DealsTitle>{deal.title}</DealsTitle>
-                <p>{deal.about}</p>
-              </DealAbout>
-            </Background>
-          </li>
-        ))}
-      </ul>
+
+      <DealsList>
+        {" "}
+        {deals.map((deal, i) => (
+          <Background key={i}>
+            <BackImage src={deal.image} alt={deal.title} />
+            <DealAbout>
+              <DealsTitle>{deal.title}</DealsTitle>
+              <DealsDescr>{deal.about}</DealsDescr>
+            </DealAbout>
+            <Link to={deal.link}>
+              <DealArrow
+                style={{ position: "absolute", bottom: "20px", right: "20px" }}
+              >
+                <FaLongArrowAltRight size={32} fill="black" />
+              </DealArrow>
+            </Link>
+          </Background>
+        ))}{" "}
+      </DealsList>
     </Deals>
   );
 };

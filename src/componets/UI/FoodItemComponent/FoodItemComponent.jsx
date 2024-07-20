@@ -1,34 +1,37 @@
-import React from "react";
 import {
   Item,
-  Price,
   StyledImage,
-  StyledInfo,
   StyledStar,
+  StyledInfo,
   Title,
-} from "./SushiPage.styled";
+  Price,
+} from "./FoodItemComponent.styled.js";
 import { Button } from "componets/UI/CommonStyles.styled";
-
 import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { handleLiked } from "store/liked-slice";
 import { addItemToCart } from "store/cart-slice";
 
-const FoodItem = ({ item, handleOpenModal }) => {
+const FoodItemComponent = ({ item, handleOpenModal }) => {
   // const cartCnxt = useContext(CartContext);
-  // const { likedItems, handleLiked } = cartCnxt;
+  // const { handleLiked, likedItems } = cartCnxt;
+
   const likedItems = useSelector((state) => state.liked.itemsLiked);
   const dispatch = useDispatch();
 
   const handleLikedChanged = () => {
     dispatch(handleLiked(item.id));
+    console.log(item.id);
   };
 
   const addProductToCart = () => {
     dispatch(addItemToCart(item.id));
+    console.log(item.id);
   };
 
-  const included = likedItems.map((liked) => liked.id).includes(item.id);
+  const included = likedItems
+    .map((likedItem) => likedItem.id)
+    .includes(item.id);
 
   return (
     <Item
@@ -41,7 +44,7 @@ const FoodItem = ({ item, handleOpenModal }) => {
     >
       <StyledImage
         src={item.image}
-        alt={item.title}
+        alt={item.name}
         opacity={included ? "0.5" : "1"}
       />
       <StyledStar
@@ -61,22 +64,20 @@ const FoodItem = ({ item, handleOpenModal }) => {
           }}
         >
           <Button
+            type="button"
             as={motion.button}
             whileHover={{ scale: 1.1 }}
             transition={{ type: "spring", stiffness: 500 }}
-            type="button"
             onClick={addProductToCart}
           >
             Order
           </Button>
           <Button
+            type="button"
             as={motion.button}
             whileHover={{ scale: 1.1 }}
             transition={{ type: "spring", stiffness: 500 }}
-            type="button"
-            onClick={() => {
-              handleOpenModal(item.id);
-            }}
+            onClick={() => handleOpenModal(item.id)}
           >
             About
           </Button>
@@ -86,4 +87,4 @@ const FoodItem = ({ item, handleOpenModal }) => {
   );
 };
 
-export default FoodItem;
+export default FoodItemComponent;

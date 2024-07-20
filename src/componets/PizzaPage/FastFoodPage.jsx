@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import Select from "react-select";
 import { FastFood } from "../../data/available-meals.js";
 import { Container, ListItems, StyledSelects } from "./FastFoodPage.styled.js";
-import FastFoodItem from "./FastFoodItem.jsx";
+// import FastFoodItem from "../removed/FastFoodItem.jsx";
 
 import { cuisines, characteristics } from "../../data/options.js";
 import ModalAbout from "componets/ModalAbout/ModalAbout.jsx";
 import { AnimatePresence, motion } from "framer-motion";
+import FoodItemComponent from "componets/UI/FoodItemComponent/FoodItemComponent.jsx";
 
 const FastFoodPage = () => {
   const [selectedCuisine, setSelectedCuisine] = useState(null);
@@ -154,7 +155,7 @@ const FastFoodPage = () => {
         }}
       >
         {itemsFiltered.map((item) => (
-          <FastFoodItem
+          <FoodItemComponent
             key={item.id}
             item={item}
             handleOpenModal={handleOpenModal}

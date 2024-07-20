@@ -5,7 +5,7 @@ import { AiOutlineLike } from "react-icons/ai";
 
 export const Image = styled.img`
   width: 50%;
-  height: 750px;
+  height: 500px;
   border-radius: 4px;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 `;
@@ -14,6 +14,7 @@ export const ImageDescription = styled.div`
   display: flex;
   flex-direction: row;
   gap: 10px;
+  height: 100%;
 `;
 
 export const AboutItem = styled.div`
@@ -57,6 +58,9 @@ export const AboutDescription = styled.p`
 `;
 
 export const ButtonsStyled = styled.div`
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;

@@ -59,10 +59,17 @@ const ModalAbout = ({ id, handleCloseModal }) => {
         as={motion.div}
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        exit={{ y: 50, opacity: 0 }}
-        transition={{ duration: 0.7, type: "spring", bounce: 0.4 }}
+        exit={{ y: 50, opacity: 0, transition: { duration: 0.4 } }}
+        transition={{ duration: 1, type: "spring", bounce: 0.4 }}
       >
-        <div style={{ display: "flex", flexDirection: "column" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            position: "relative",
+            height: "100%",
+          }}
+        >
           <ImageDescription>
             <Image src={image} alt={title} />
             <AboutItem>
