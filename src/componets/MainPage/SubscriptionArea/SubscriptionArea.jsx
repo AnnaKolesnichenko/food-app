@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { SubscrContainer } from "./SubscriptionArea.styled";
 
 const SubscriptionArea = () => {
   //   const email = useRef();
@@ -32,7 +33,7 @@ const SubscriptionArea = () => {
   };
 
   return (
-    <div>
+    <SubscrContainer>
       <p>Subscribe to our news and get your promotoon code!</p>
       <form onSubmit={handleSubmit}>
         <label htmlFor="email"></label>
@@ -48,7 +49,7 @@ const SubscriptionArea = () => {
         </button>
         {code && <p>Done well, your code is {uuidv4()}</p>}
       </form>
-    </div>
+    </SubscrContainer>
   );
 };
 
