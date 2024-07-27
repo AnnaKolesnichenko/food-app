@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/food-app/static/css/main.fc0c46b8.css",
-    "main.js": "/food-app/static/js/main.764258b8.js",
+    "main.css": "/food-app/static/css/main.94897701.css",
+    "main.js": "/food-app/static/js/main.52f56e20.js",
     "static/media/ground-turkey-stir-fry-recipe_jpeg": "/food-app/static/media/ground-turkey-stir-fry-recipe_2c018df3966aff7e9d5669c2ea0b2162.163f333c81d814085f47.jpeg",
     "static/media/Beef_stir.jpg": "/food-app/static/media/Beef_stir.b1bf53db9906f0428791.jpg",
     "static/media/Bo_Luc.jpeg": "/food-app/static/media/Bo_Luc.7e2a8b95d72850dec054.jpeg",
@@ -112,11 +112,11 @@
     "static/media/slick.ttf": "/food-app/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/food-app/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/food-app/index.html",
-    "main.fc0c46b8.css.map": "/food-app/static/css/main.fc0c46b8.css.map",
-    "main.764258b8.js.map": "/food-app/static/js/main.764258b8.js.map"
+    "main.94897701.css.map": "/food-app/static/css/main.94897701.css.map",
+    "main.52f56e20.js.map": "/food-app/static/js/main.52f56e20.js.map"
   },
   "entrypoints": [
-    "static/css/main.fc0c46b8.css",
-    "static/js/main.764258b8.js"
+    "static/css/main.94897701.css",
+    "static/js/main.52f56e20.js"
   ]
 }
