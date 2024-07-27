@@ -8,6 +8,8 @@ export const Image = styled.img`
   height: 500px;
   border-radius: 4px;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  object-fit: cover;
+  overflow: hidden;
 `;
 
 export const ImageDescription = styled.div`
@@ -15,11 +17,13 @@ export const ImageDescription = styled.div`
   flex-direction: row;
   gap: 10px;
   height: 100%;
+  width: 100%;
 `;
 
 export const AboutItem = styled.div`
   display: flex;
   flex-direction: column;
+  width: 50%;
 `;
 
 export const AboutTitle = styled.h3`

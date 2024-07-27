@@ -10,10 +10,11 @@ import ModalAbout from "componets/ModalAbout/ModalAbout";
 import { HealthyFood } from "data/simpleHealthy";
 
 const SimplePage = () => {
-  const [selected, setSelected] = useState(null);
-  const [region, setRegion] = useState(null);
+  const [selectedCuisine, setSelected] = useState(null);
+  const [selectedType, setRegion] = useState(null);
   const [itemsFiltered, setItemsFiltered] = useState(HealthyFood);
   const [selectedItem, setSelectedItem] = useState(false);
+  console.log(selectedCuisine, selectedType);
 
   useEffect(() => {
     let selectedItems = HealthyFood;
@@ -22,20 +23,20 @@ const SimplePage = () => {
     //   item.characteristic.includes(selected.value)
     // );
 
-    if (selected) {
+    if (selectedType) {
       selectedItems = selectedItems.filter((item) =>
-        item.characteristic.includes(selected.value)
+        item.characteristic.includes(selectedType.value)
       );
     }
 
-    if (region) {
+    if (selectedCuisine) {
       selectedItems = selectedItems.filter((item) =>
-        item.cuisine.includes(region.value)
+        item.cuisine.includes(selectedCuisine.value)
       );
     }
 
     setItemsFiltered(selectedItems);
-  }, [selected, region]);
+  }, [selectedCuisine, selectedType]);
 
   const handleSelectChange = (option) => {
     setSelected(option);
@@ -109,7 +110,7 @@ const SimplePage = () => {
           styles={customStyledSelect}
           name="selectCuisine"
           options={salads}
-          value={selected}
+          value={selectedCuisine}
           onChange={handleSelectChange}
           placeholder="Which is yours?"
         />
@@ -121,7 +122,7 @@ const SimplePage = () => {
           styles={customStyledSelect}
           name="selectCuisine"
           options={saladIngredients}
-          value={region}
+          value={selectedType}
           onChange={handleRegionChange}
           placeholder="Choose the best"
         />

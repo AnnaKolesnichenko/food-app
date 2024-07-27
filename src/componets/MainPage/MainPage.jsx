@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import {
   Container,
@@ -21,11 +21,39 @@ import ModalAbout from "componets/ModalAbout/ModalAbout";
 import { LuJapaneseYen } from "react-icons/lu";
 import { GiHamburger } from "react-icons/gi";
 import SubscriptionArea from "./SubscriptionArea/SubscriptionArea";
+import PromoModal from "./Countdown/Modal";
 
 const MainPage = () => {
   const favourites = useSelector((state) => state.liked.itemsLiked);
   const [selectedItem, setSelectedItem] = useState(false);
   console.log(favourites.length);
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setModalIsOpen(true);
+    }, 1000); // Открытие модального окна через 10 секунд
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleClose = () => {
+    setModalIsOpen(false);
+  };
+
+  const getMidnightTimestamp = () => {
+    const now = new Date();
+    const midnight = new Date(now);
+    midnight.setHours(24, 0, 0, 0); // Set to the next midnight (00:00:00)
+    return midnight.getTime(); // Return timestamp in milliseconds
+  };
+
+  const promotion = {
+    title: "Скидка 10% на первый заказ!",
+    description: "Сделайте первый заказ до конца дня и получите 10% скидку.",
+    endTime: getMidnightTimestamp(), // Set to midnight of the current day
+  };
 
   const handleOpenModal = (id) => {
     setSelectedItem(id);
@@ -60,7 +88,7 @@ const MainPage = () => {
             transition={{ duration: 3, type: "spring", bounce: 0.7 }}
             to="/sushi"
           >
-            asian tunes
+            asian vibe
           </StyledLink>
           <StyledLink
             whileHover={{ y: -20 }}
@@ -74,7 +102,7 @@ const MainPage = () => {
             transition={{ duration: 3, type: "spring", bounce: 0.7 }}
             to="/salads"
           >
-            simple organic
+            simply good
           </StyledLink>
         </LinkContainer>
         <SubscriptionArea />
@@ -101,6 +129,11 @@ const MainPage = () => {
           <OurBenefits />
         </InformativeBlock>
       </WhiteBackground>
+      <PromoModal
+        isOpen={modalIsOpen}
+        onRequestClose={handleClose}
+        promotion={promotion}
+      />
     </div>
   );
 };

@@ -13,7 +13,7 @@ import {
 import { useSelector } from "react-redux";
 
 import { FaLongArrowAltRight } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const PromotionsPage = () => {
   const deals = useSelector((state) => state.deals.deals);
@@ -44,6 +44,7 @@ const PromotionsPage = () => {
           </Background>
         ))}{" "}
       </DealsList>
+      <Outlet />
     </Deals>
   );
 };

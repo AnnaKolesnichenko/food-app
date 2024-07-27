@@ -12,7 +12,7 @@ export const ListItems = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
 `;
 
 export const StyledSelects = styled.div`

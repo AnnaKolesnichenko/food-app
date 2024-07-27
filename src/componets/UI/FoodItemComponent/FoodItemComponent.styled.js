@@ -65,7 +65,7 @@ export const StyledImage = styled.img.attrs((props) => ({
     opacity: props.opacity || 1,
     display: "block",
     width: "100%",
-    height: "300px",
+    height: "260px",
     marginLeft: "auto",
     marginRight: "auto",
     borderRadius: "10px 10px 0px 0px",

@@ -52,7 +52,7 @@ const FastFoodPage = () => {
   const customStyledSelect = {
     control: (provided, state) => ({
       ...provided,
-      "width": "500px",
+      "width": "260px",
       "marginLeft": "auto",
       "marginRight": "auto",
       // "marginTop": "50px",

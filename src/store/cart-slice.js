@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { ASIAN_DISH } from "data/asian";
 import { FastFood } from "data/available-meals";
+import { HealthyFood } from "data/simpleHealthy";
 
 const initialState = {
   items: [],
@@ -17,6 +18,10 @@ const cartSlice = createSlice({
 
       if (!product) {
         product = FastFood.find((item) => item.id === id);
+      }
+
+      if (!product) {
+        product = HealthyFood.find((item) => item.id === id);
       }
 
       if (product) {

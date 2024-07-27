@@ -47,18 +47,27 @@ export const characteristics = [
 ];
 
 export const salads = [
-  { value: "vegetables", label: "Vegetables" },
-  { value: "meat", label: "Meat" },
+  { value: "middle eastern", label: "Middle Eastern" },
+  { value: "british", label: "British" },
+  { value: "italian", label: "Italian" },
+  { value: "mediterranean", label: "Mediterranean" },
   { value: "asian", label: "Asian" },
-  { value: "seafood", label: "Seafood" },
-  { value: "mixed", label: "Mixed" },
+  { value: "american", label: "American" },
+  { value: "greek", label: "Greek" },
+  { value: "french", label: "French" },
+  { value: "thai", label: "Thai" },
+  { value: "vietnamese", label: "Vietnamese" },
+  { value: "european", label: "European" },
 ];
 
 export const saladIngredients = [
-  { value: "vegetable", label: "Vegetable" },
+  { value: "vegeterian", label: "Vegeterian" },
+  { value: "vegetables", label: "vegetables" },
   { value: "chicken", label: "Chicken" },
   { value: "rice", label: "Rice" },
   { value: "beef", label: "Beef" },
+  { value: "minced meat", label: "Minced Meat" },
+  { value: "pasta", label: "Pasta" },
   { value: "seafood", label: "Seafood" },
   { value: "shrimp", label: "Shrimp" },
   { value: "salmon", label: "Salmon" },
@@ -66,4 +75,6 @@ export const saladIngredients = [
   { value: "honey", label: "Honey" },
   { value: "olive", label: "Olive oil" },
   { value: "spicy", label: "Spicy" },
+  { value: "light", label: "Light" },
+  { value: "low-calories", label: "Low-calories" },
 ];

@@ -23,6 +23,7 @@ import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { handleLiked } from "store/liked-slice";
 import { addItemToCart } from "store/cart-slice";
+import { HealthyFood } from "data/simpleHealthy";
 
 const ModalAbout = ({ id, handleCloseModal }) => {
   // const context = useContext(CartContext);
@@ -43,13 +44,16 @@ const ModalAbout = ({ id, handleCloseModal }) => {
   if (!foodItem) {
     foodItem = FastFood.find((item) => item.id === id);
   }
+  if (!foodItem) {
+    foodItem = HealthyFood.find((item) => item.id === id);
+  }
   const { image, title, price, description, cuisine, characteristic } =
     foodItem;
 
   const favored = likedItems.map((item) => item.id).includes(id);
 
   return (
-    <Backdrop>
+    <Backdrop onClick={handleCloseModal}>
       <Modal
         style={{
           backgroundImage: `url(${bg})`,

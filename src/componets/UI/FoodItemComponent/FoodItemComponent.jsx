@@ -1,37 +1,36 @@
+import React from "react";
 import {
   Item,
-  StyledImage,
-  StyledStar,
-  StyledInfo,
-  Title,
   Price,
-} from "./FoodItemComponent.styled.js";
+  StyledImage,
+  StyledInfo,
+  StyledStar,
+  Title,
+} from "./FoodItemComponent.styled";
 import { Button } from "componets/UI/CommonStyles.styled";
+
 import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { handleLiked } from "store/liked-slice";
 import { addItemToCart } from "store/cart-slice";
 
-const FoodItemComponent = ({ item, handleOpenModal }) => {
+const FoodItem = ({ item, handleOpenModal }) => {
   // const cartCnxt = useContext(CartContext);
-  // const { handleLiked, likedItems } = cartCnxt;
-
+  // const { likedItems, handleLiked } = cartCnxt;
   const likedItems = useSelector((state) => state.liked.itemsLiked);
   const dispatch = useDispatch();
 
+  console.log(item);
+
   const handleLikedChanged = () => {
     dispatch(handleLiked(item.id));
-    console.log(item.id);
   };
 
   const addProductToCart = () => {
     dispatch(addItemToCart(item.id));
-    console.log(item.id);
   };
 
-  const included = likedItems
-    .map((likedItem) => likedItem.id)
-    .includes(item.id);
+  const included = likedItems.map((liked) => liked.id).includes(item.id);
 
   return (
     <Item
@@ -44,7 +43,7 @@ const FoodItemComponent = ({ item, handleOpenModal }) => {
     >
       <StyledImage
         src={item.image}
-        alt={item.name}
+        alt={item.title}
         opacity={included ? "0.5" : "1"}
       />
       <StyledStar
@@ -64,20 +63,22 @@ const FoodItemComponent = ({ item, handleOpenModal }) => {
           }}
         >
           <Button
-            type="button"
             as={motion.button}
             whileHover={{ scale: 1.1 }}
             transition={{ type: "spring", stiffness: 500 }}
+            type="button"
             onClick={addProductToCart}
           >
             Order
           </Button>
           <Button
-            type="button"
             as={motion.button}
             whileHover={{ scale: 1.1 }}
             transition={{ type: "spring", stiffness: 500 }}
-            onClick={() => handleOpenModal(item.id)}
+            type="button"
+            onClick={() => {
+              handleOpenModal(item.id);
+            }}
           >
             About
           </Button>
@@ -87,4 +88,4 @@ const FoodItemComponent = ({ item, handleOpenModal }) => {
   );
 };
 
-export default FoodItemComponent;
+export default FoodItem;

@@ -72,7 +72,9 @@ const HeaderComponent = () => {
           />
         )}
       </AnimatePresence>
-      <AnimatePresence>{orderAccepted && <OrderAccepted />}</AnimatePresence>
+      <AnimatePresence>
+        {orderAccepted && <OrderAccepted text="Your order was accepted!" />}
+      </AnimatePresence>
       <div style={{ width: "120px", marginRight: "55px" }}>
         <StyledNavLink to="/">Food Culture</StyledNavLink>
       </div>

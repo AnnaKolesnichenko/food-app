@@ -63,7 +63,7 @@ export const BenefitItem = styled.li`
   &:hover {
     background-color: pink;
     transform: background-color;
-    transform: scale(1.1);
+    transform: scale(1.3);
   }
 `;
 

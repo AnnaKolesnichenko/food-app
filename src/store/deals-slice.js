@@ -29,7 +29,7 @@ const initialState = {
     {
       title: "Rolls Bonanza: Buy 4, Get 1 Free Set!",
       image: roll,
-      link: "/",
+      link: "bonanza",
       about:
         "Indulge in our irresistible deal! Purchase four sets of rolls and enjoy an extra set on the house. Elevate your meal with a complimentary serving—because great taste deserves more!",
     },

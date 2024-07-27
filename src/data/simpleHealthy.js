@@ -40,8 +40,8 @@ export const HealthyFood = [
     image: caprese,
     title: "Caprese Salad",
     price: 12.99,
-    characteristic: ["light", "low-calories"],
-    cuisine: ["salad", "healthy", "greens"],
+    characteristic: ["light", "low-calories", "vegeterian"],
+    cuisine: ["Italian"],
     ingredients: [
       "4 ripe tomatoes",
       "1 pound fresh mozzarella",
@@ -68,7 +68,7 @@ export const HealthyFood = [
     image: baked_potato,
     title: "Jacked Potatoes",
     price: 10,
-    characteristic: ["healthy", "low-calories", "savoury"],
+    characteristic: ["light", "low-calories", "vegeterian"],
     cuisine: ["british"],
     ingredients: [
       "4 large baking potatoes",
@@ -95,7 +95,7 @@ export const HealthyFood = [
     image: beef_shawerma,
     title: "Beef Shawerma",
     price: 14.75,
-    characteristic: ["", "", ""],
+    characteristic: ["chicken", "beef", "spicy", "vegetables"],
     cuisine: ["Middle Eastern"],
     ingredients: [
       "2 pounds beef steak, thinly sliced",
@@ -131,7 +131,7 @@ export const HealthyFood = [
     image: chick_shawerma,
     title: "Chicken Shawerma",
     price: 12.99,
-    characteristic: ["", "", ""],
+    characteristic: ["chicken", "spicy", "vegetables"],
     cuisine: ["Middle Eastern"],
     ingredients: [
       "2 pounds chicken thighs, boneless and skinless",
@@ -167,7 +167,13 @@ export const HealthyFood = [
     image: beet_feta,
     title: "Beet and Feta Salad",
     price: 9.99,
-    characteristic: ["", "", ""],
+    characteristic: [
+      "light",
+      "low-calories",
+      "vegeterian",
+      "olives",
+      "vegetables",
+    ],
     cuisine: ["Mediterranean"],
     ingredients: [
       "4 medium beets",
@@ -195,7 +201,13 @@ export const HealthyFood = [
     image: chicken_avocado,
     title: "Chicken Salad",
     price: 12.99,
-    characteristic: ["", "", ""],
+    characteristic: [
+      "light",
+      "low-calories",
+      "chicken",
+      "olives",
+      "vegetables",
+    ],
     cuisine: ["American"],
     ingredients: [
       "2 cooked chicken breasts, sliced",
@@ -225,7 +237,13 @@ export const HealthyFood = [
     image: chopped_salad,
     title: "Chopped Salad",
     price: 8.99,
-    characteristic: ["", "", ""],
+    characteristic: [
+      "light",
+      "low-calories",
+      "vegeterian",
+      "vinegar",
+      "vegetables",
+    ],
     cuisine: ["Mediterranean"],
     ingredients: [
       "1 head of Romaine lettuce, chopped",
@@ -256,7 +274,7 @@ export const HealthyFood = [
     image: chicken_caesar,
     title: "Chicken Caesar",
     price: 15.79,
-    characteristic: ["", "", ""],
+    characteristic: ["low-calories", "chicken", "vegetables"],
     cuisine: ["American"],
     ingredients: [
       "2 cooked chicken breasts, sliced",
@@ -285,7 +303,14 @@ export const HealthyFood = [
     image: greek_salad,
     title: "Greek Salad",
     price: 11,
-    characteristic: ["", "", ""],
+    characteristic: [
+      "light",
+      "low-calories",
+      "vegeterian",
+      "vinegar",
+      "olives",
+      "vegetables",
+    ],
     cuisine: ["Greek"],
     ingredients: [
       "1 head of Romaine lettuce or 2 cups mixed greens",
@@ -315,7 +340,13 @@ export const HealthyFood = [
     image: halloumi,
     title: "Halloumi salad",
     price: 16.99,
-    characteristic: ["", "", ""],
+    characteristic: [
+      "light",
+      "low-calories",
+      "vegeterian",
+      "olives",
+      "vegetables",
+    ],
     cuisine: ["Mediterranean"],
     ingredients: [
       "8 ounces halloumi cheese, sliced",
@@ -348,7 +379,7 @@ export const HealthyFood = [
     image: nisois,
     title: "Nicoise",
     price: 19.75,
-    characteristic: ["", "", ""],
+    characteristic: ["light", "seafood", "vinegar", "olives", "vegetables"],
     cuisine: ["French"],
     ingredients: [
       "4 cups mixed greens or Romaine lettuce",
@@ -383,7 +414,7 @@ export const HealthyFood = [
     image: pear_dorblue,
     title: "Pear-Dor Blue salad",
     price: 20.75,
-    characteristic: ["", "", ""],
+    characteristic: ["light", "low-calories", "honey", "olives", "vegetables"],
     cuisine: ["Mediterranean"],
     ingredients: [
       "4 cups mixed greens or arugula",
@@ -412,7 +443,7 @@ export const HealthyFood = [
     image: prawn_caesar,
     title: "Prawns Caesar",
     price: 25,
-    characteristic: ["", "", ""],
+    characteristic: ["light", "seafood", "shrimp", "vegetables"],
     cuisine: ["American"],
     ingredients: [
       "2 cups Romaine lettuce, chopped",
@@ -443,7 +474,7 @@ export const HealthyFood = [
     image: potato_salad,
     title: "Potato Salad",
     price: 9.99,
-    characteristic: ["", "", ""],
+    characteristic: ["vegeterian", "spicy", "vegetables"],
     cuisine: ["American"],
     ingredients: [
       "4 cups baby potatoes or small Yukon Gold potatoes, halved",
@@ -474,7 +505,14 @@ export const HealthyFood = [
     image: prawns_grape,
     title: "Prawn-Grapefruit",
     price: 26.77,
-    characteristic: ["", "", ""],
+    characteristic: [
+      "light",
+      "seafood",
+      "shrimp",
+      "honey",
+      "olives",
+      "vegetables",
+    ],
     cuisine: ["Mediterranean"],
     ingredients: [
       "2 cups mixed greens or arugula",
@@ -507,7 +545,15 @@ export const HealthyFood = [
     image: summer_salad,
     title: "Summer Salad",
     price: 10,
-    characteristic: ["", "", ""],
+    characteristic: [
+      "light",
+      "low-calories",
+      "vegeterian",
+      "vinegar",
+      "honey",
+      "olives",
+      "vegetables",
+    ],
     cuisine: ["Mediterranean"],
     ingredients: [
       "4 cups mixed greens or baby spinach",
@@ -540,7 +586,7 @@ export const HealthyFood = [
     image: thai_beef_salad,
     title: "Thai Beef Salad",
     price: 21.99,
-    characteristic: ["", "", ""],
+    characteristic: ["beef", "olives", "spicy", "vegetables"],
     cuisine: ["Thai"],
     ingredients: [
       "1 pound beef sirloin or flank steak, thinly sliced",
@@ -578,7 +624,15 @@ export const HealthyFood = [
     image: veggies_avocado,
     title: "Vegetables with Avocado",
     price: 17,
-    characteristic: ["", "", ""],
+    characteristic: [
+      "light",
+      "low-calories",
+      "vegeterian",
+      "vinegar",
+      "honey",
+      "olives",
+      "vegetables",
+    ],
     cuisine: ["Mediterranean"],
     ingredients: [
       "4 cups mixed greens or spinach",
@@ -611,7 +665,7 @@ export const HealthyFood = [
     image: zuccini_fritters,
     title: "Zuccini Fritters",
     price: 11,
-    characteristic: ["", "", ""],
+    characteristic: ["vegeterian", "vegetables"],
     cuisine: ["Mediterranean"],
     ingredients: [
       "2 medium zucchinis, grated",
@@ -640,7 +694,7 @@ export const HealthyFood = [
     image: veggie_rolls,
     title: "Veggie Rolls",
     price: 10.99,
-    characteristic: ["", "", ""],
+    characteristic: ["light", "low-calories", "vegeterian", "vegetables"],
     cuisine: ["Vietnamese"],
     ingredients: [
       "8-10 rice paper wrappers",
@@ -670,7 +724,7 @@ export const HealthyFood = [
     image: vegan_lasagne,
     title: "Vegan Lasagne",
     price: 16.99,
-    characteristic: ["", "", ""],
+    characteristic: ["light", "low-calories", "vegeterian", "vegetables"],
     cuisine: ["Italian"],
     ingredients: [
       "9-12 lasagna noodles",
@@ -706,7 +760,7 @@ export const HealthyFood = [
     image: tuna_pasta,
     title: "Tuna Pasta",
     price: 22.99,
-    characteristic: ["", "", ""],
+    characteristic: ["seafood", "vegetables"],
     cuisine: ["Italian"],
     ingredients: [
       "8 ounces pasta (e.g., penne, fusilli, or spaghetti)",
@@ -739,7 +793,7 @@ export const HealthyFood = [
     image: pumpkin_soup,
     title: "Pumpkin Soup",
     price: 8,
-    characteristic: ["", "", ""],
+    characteristic: ["light", "low-calories", "vegetables"],
     cuisine: ["Global"],
     ingredients: [
       "1 medium pumpkin (about 3-4 pounds), peeled, seeded, and cubed",
@@ -772,7 +826,7 @@ export const HealthyFood = [
     image: sheperds,
     title: "Sheperd's Pie",
     price: 17,
-    characteristic: ["", "", ""],
+    characteristic: ["beef", "spicy", "vegetables"],
     cuisine: ["British"],
     ingredients: [
       "1 pound ground beef or lamb",
@@ -808,7 +862,7 @@ export const HealthyFood = [
     image: pork_shish,
     title: "Shashlik",
     price: 27,
-    characteristic: ["", "", ""],
+    characteristic: ["chicken", "beef", "seafood", "spicy"],
     cuisine: ["European", "Asian"],
     ingredients: [
       "1.5 pounds pork shoulder or tenderloin, cut into cubes",
@@ -841,7 +895,7 @@ export const HealthyFood = [
     image: mackerel,
     title: "Grilled Fish steak",
     price: 20,
-    characteristic: ["", "", ""],
+    characteristic: ["seafood", "salmon", "vegetables"],
     cuisine: ["Mediterranean"],
     ingredients: [
       "4 mackerel or salmon fillets",
@@ -871,7 +925,7 @@ export const HealthyFood = [
     image: lasagne,
     title: "Lasagna",
     price: 25,
-    characteristic: ["", "", ""],
+    characteristic: ["chicken", "beef", "vegetables"],
     cuisine: ["Italian"],
     ingredients: [
       "12-15 lasagna noodles",
@@ -908,7 +962,7 @@ export const HealthyFood = [
     image: frittata,
     title: "Frittata",
     price: 11,
-    characteristic: ["", "", ""],
+    characteristic: ["light", "vegetables"],
     cuisine: ["Italian"],
     ingredients: [
       "6 large eggs",
@@ -937,7 +991,7 @@ export const HealthyFood = [
     image: chili,
     title: "Chilli",
     price: 15,
-    characteristic: ["", "", ""],
+    characteristic: ["minced meat", "spicy", "vegetables"],
     cuisine: ["American"],
     ingredients: [
       "1 pound ground beef or turkey",
@@ -973,7 +1027,7 @@ export const HealthyFood = [
     image: chick_corn_soup,
     title: "Chicken Corn soup",
     price: 16,
-    characteristic: ["", "", ""],
+    characteristic: ["chicken", "vegetables"],
     cuisine: ["American"],
     ingredients: [
       "1 pound chicken breasts or thighs, diced",
@@ -1007,8 +1061,8 @@ export const HealthyFood = [
     image: chicken_soup,
     title: "Chicken Noodles",
     price: 14,
-    characteristic: ["", "", ""],
-    cuisine: ["Americal", "Global"],
+    characteristic: ["light", "chicken", "vegetables"],
+    cuisine: ["Americal", "European"],
     ingredients: [
       "1 pound chicken breasts or thighs, bone-in or boneless",
       "1 large onion, diced",
@@ -1042,7 +1096,7 @@ export const HealthyFood = [
     image: carbonara,
     title: "Pasts Carbonara",
     price: 17,
-    characteristic: ["", "", ""],
+    characteristic: ["pasta"],
     cuisine: ["Italian"],
     ingredients: [
       "12 ounces spaghetti or fettuccine",
@@ -1073,7 +1127,7 @@ export const HealthyFood = [
     image: bolognese,
     title: "Bolognese",
     price: 15,
-    characteristic: ["", "", ""],
+    characteristic: ["pasta", "beef"],
     cuisine: ["Italian"],
     ingredients: [
       "1 pound ground beef or a mix of beef and pork",
@@ -1109,7 +1163,7 @@ export const HealthyFood = [
     image: beef_strogan,
     title: "Beef Stroganov",
     price: 19,
-    characteristic: ["", "", ""],
+    characteristic: ["beef", "vegetables"],
     cuisine: ["European"],
     ingredients: [
       "1 pound beef sirloin or tenderloin, thinly sliced into strips",
