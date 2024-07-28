@@ -22,6 +22,7 @@ import { LuJapaneseYen } from "react-icons/lu";
 import { GiHamburger } from "react-icons/gi";
 import SubscriptionArea from "./SubscriptionArea/SubscriptionArea";
 import PromoModal from "./Countdown/PromoModal";
+import FixedPromos from "./Countdown/FixedPromos";
 
 const MainPage = () => {
   // const favourites = useSelector((state) => state.liked.itemsLiked);
@@ -37,21 +38,12 @@ const MainPage = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleClose = () => {
+  const handlePromoClose = () => {
     setModalIsOpen(false);
   };
 
-  const getMidnightTimestamp = () => {
-    const now = new Date();
-    const midnight = new Date(now);
-    midnight.setHours(24, 0, 0, 0); // Set to the next midnight (00:00:00)
-    return midnight.getTime(); // Return timestamp in milliseconds
-  };
-
-  const promotion = {
-    title: "Скидка 10% на первый заказ!",
-    description: "Сделайте первый заказ до конца дня и получите 10% скидку.",
-    endTime: getMidnightTimestamp(), // Set to midnight of the current day
+  const handlePromoOpen = () => {
+    setModalIsOpen(true);
   };
 
   const handleOpenModal = (id) => {
@@ -129,10 +121,13 @@ const MainPage = () => {
         </InformativeBlock>
       </WhiteBackground>
       <AnimatePresence>
-        {modalIsOpen && (
-          <PromoModal onRequestClose={handleClose} promotion={promotion} />
-        )}
+        {modalIsOpen && <PromoModal onRequestClose={handlePromoClose} />}
       </AnimatePresence>
+      <FixedPromos
+        modalIsOpen={modalIsOpen}
+        handlePromoClose={handlePromoClose}
+        handlePromoOpen={handlePromoOpen}
+      />
     </div>
   );
 };

@@ -22,7 +22,7 @@ const CountdownTimer = ({ endTime }) => {
 
   return (
     <div>
-      <p>Осталось времени: {formatTime(timeLeft)}</p>
+      <p>Time left: {formatTime(timeLeft)}</p>
     </div>
   );
 };
