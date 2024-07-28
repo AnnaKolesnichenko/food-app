@@ -12,7 +12,7 @@ import Background from "../../data/assets/re2.jpeg";
 import { ASIAN_DISH } from "data/asian";
 import SliderResponsive from "./Slider/Slider";
 import { FastFood } from "data/available-meals";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import OurBenefits from "./OurBenefits/OurBenefits";
 import DailyPick from "./DailyPick/DailyPick";
 import Deals from "./Deals/Deals";
@@ -21,12 +21,11 @@ import ModalAbout from "componets/ModalAbout/ModalAbout";
 import { LuJapaneseYen } from "react-icons/lu";
 import { GiHamburger } from "react-icons/gi";
 import SubscriptionArea from "./SubscriptionArea/SubscriptionArea";
-import PromoModal from "./Countdown/Modal";
+import PromoModal from "./Countdown/PromoModal";
 
 const MainPage = () => {
-  const favourites = useSelector((state) => state.liked.itemsLiked);
+  // const favourites = useSelector((state) => state.liked.itemsLiked);
   const [selectedItem, setSelectedItem] = useState(false);
-  console.log(favourites.length);
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -129,11 +128,11 @@ const MainPage = () => {
           <OurBenefits />
         </InformativeBlock>
       </WhiteBackground>
-      <PromoModal
-        isOpen={modalIsOpen}
-        onRequestClose={handleClose}
-        promotion={promotion}
-      />
+      <AnimatePresence>
+        {modalIsOpen && (
+          <PromoModal onRequestClose={handleClose} promotion={promotion} />
+        )}
+      </AnimatePresence>
     </div>
   );
 };

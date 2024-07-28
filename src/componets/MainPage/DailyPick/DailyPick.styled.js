@@ -21,8 +21,24 @@ export const HotTitle = styled.h2`
 
 export const HotImage = styled.img`
   width: 100%;
-  height: 290px;
+  height: 350px;
   border-radius: 30px;
+
+  @media (max-width: 1920px) {
+    height: 330px;
+  }
+
+  @media (max-width: 1780px) {
+    height: 290px;
+  }
+
+  @media (max-width: 1280px) {
+    height: 270px;
+  }
+
+  @media (max-width: 780px) {
+    height: 240px;
+  }
 `;
 
 export const HotsIcon = styled.img`
