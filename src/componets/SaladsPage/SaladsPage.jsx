@@ -138,13 +138,33 @@ const SimplePage = () => {
           },
         }}
       >
-        {itemsFiltered.map((item) => (
-          <FoodItemComponent
-            key={item.id}
-            item={item}
-            handleOpenModal={handleOpenModal}
-          />
-        ))}
+        {itemsFiltered.map((item) => {
+          // const price = item.characteristic.includes("salad")
+          //   ? (item.price * 0.9).toFixed(2)
+          //   : item.price;
+
+          const discountPrice = (item.price * 0.9).toFixed(2);
+
+          if (item.characteristic.includes("salad")) {
+            return (
+              <FoodItemComponent
+                key={item.id}
+                item={item}
+                handleOpenModal={handleOpenModal}
+                discountPrice={discountPrice}
+              />
+            );
+          } else {
+            return (
+              <FoodItemComponent
+                key={item.id}
+                item={item}
+                handleOpenModal={handleOpenModal}
+                price={item.price}
+              />
+            );
+          }
+        })}
       </ListItems>
     </Container>
   );

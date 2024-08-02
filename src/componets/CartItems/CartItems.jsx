@@ -7,6 +7,8 @@ import {
   StyledTitle,
   StyledActionDiv,
   StyledImage,
+  OriginalPrice,
+  DiscountedPrice,
 } from "./CartItems.styled";
 import {
   addFreeItem,
@@ -25,8 +27,6 @@ const CartItems = () => {
   const freeItems = useSelector((state) => state.cart.freeItems);
   const [quantity, setQuantity] = useState(0);
   const dispatch = useDispatch();
-
-  console.log(freeItems);
 
   useEffect(() => {
     let total = 0;
@@ -81,6 +81,10 @@ const CartItems = () => {
 
       {items.map((item) => {
         const price = Number(item.price);
+        const discount = item.characteristic.includes("salad");
+        const discountedPrice =
+          item.characteristic.includes("salad") &&
+          (Number(item.price) * 0.9).toFixed(2);
         return (
           <StyledLiItem key={item.id}>
             <div
@@ -94,7 +98,14 @@ const CartItems = () => {
               <StyledImage src={item.image} alt={item.title} />
               <div>
                 <StyledTitle>{item.title}</StyledTitle>
-                <StyledPrice>${price}</StyledPrice>
+                {discount ? (
+                  <>
+                    <OriginalPrice>${price}</OriginalPrice>
+                    <DiscountedPrice>${discountedPrice}</DiscountedPrice>
+                  </>
+                ) : (
+                  <StyledPrice>${price}</StyledPrice>
+                )}
               </div>
             </div>
             <StyledActionDiv>

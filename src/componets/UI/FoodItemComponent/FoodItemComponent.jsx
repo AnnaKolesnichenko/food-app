@@ -14,13 +14,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { handleLiked } from "store/liked-slice";
 import { addItemToCart } from "store/cart-slice";
 
-const FoodItem = ({ item, handleOpenModal }) => {
+const FoodItem = ({ item, handleOpenModal, price, discountPrice }) => {
   // const cartCnxt = useContext(CartContext);
   // const { likedItems, handleLiked } = cartCnxt;
   const likedItems = useSelector((state) => state.liked.itemsLiked);
   const dispatch = useDispatch();
-
-  console.log(item);
 
   const handleLikedChanged = () => {
     dispatch(handleLiked(item.id));
@@ -53,7 +51,14 @@ const FoodItem = ({ item, handleOpenModal }) => {
       />
       <StyledInfo>
         <Title>{item.title}</Title>
-        <Price>${item.price}</Price>
+        <Price>{item.price}</Price>
+        {/* {discountPrice && (
+          <>
+            <Price>{item.price}</Price>
+            <Price>${discountPrice}</Price>
+          </>
+        )}
+        {!discountPrice && <Price>${price}</Price>} */}
         <div
           style={{
             display: "flex",

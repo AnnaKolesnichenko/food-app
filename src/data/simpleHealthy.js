@@ -40,7 +40,7 @@ export const HealthyFood = [
     image: caprese,
     title: "Caprese Salad",
     price: 12.99,
-    characteristic: ["light", "low-calories", "vegeterian"],
+    characteristic: ["light", "low-calories", "vegeterian", "salad"],
     cuisine: ["Italian"],
     ingredients: [
       "4 ripe tomatoes",
@@ -173,6 +173,7 @@ export const HealthyFood = [
       "vegeterian",
       "olives",
       "vegetables",
+      "salad",
     ],
     cuisine: ["Mediterranean"],
     ingredients: [
@@ -207,6 +208,7 @@ export const HealthyFood = [
       "chicken",
       "olives",
       "vegetables",
+      "salad",
     ],
     cuisine: ["American"],
     ingredients: [
@@ -243,6 +245,7 @@ export const HealthyFood = [
       "vegeterian",
       "vinegar",
       "vegetables",
+      "salad",
     ],
     cuisine: ["Mediterranean"],
     ingredients: [
@@ -274,7 +277,7 @@ export const HealthyFood = [
     image: chicken_caesar,
     title: "Chicken Caesar",
     price: 15.79,
-    characteristic: ["low-calories", "chicken", "vegetables"],
+    characteristic: ["low-calories", "chicken", "vegetables", "salad"],
     cuisine: ["American"],
     ingredients: [
       "2 cooked chicken breasts, sliced",
@@ -310,6 +313,7 @@ export const HealthyFood = [
       "vinegar",
       "olives",
       "vegetables",
+      "salad",
     ],
     cuisine: ["Greek"],
     ingredients: [
@@ -346,6 +350,7 @@ export const HealthyFood = [
       "vegeterian",
       "olives",
       "vegetables",
+      "salad",
     ],
     cuisine: ["Mediterranean"],
     ingredients: [
@@ -379,7 +384,14 @@ export const HealthyFood = [
     image: nisois,
     title: "Nicoise",
     price: 19.75,
-    characteristic: ["light", "seafood", "vinegar", "olives", "vegetables"],
+    characteristic: [
+      "light",
+      "seafood",
+      "vinegar",
+      "olives",
+      "vegetables",
+      "salad",
+    ],
     cuisine: ["French"],
     ingredients: [
       "4 cups mixed greens or Romaine lettuce",
@@ -414,7 +426,14 @@ export const HealthyFood = [
     image: pear_dorblue,
     title: "Pear-Dor Blue salad",
     price: 20.75,
-    characteristic: ["light", "low-calories", "honey", "olives", "vegetables"],
+    characteristic: [
+      "light",
+      "low-calories",
+      "honey",
+      "olives",
+      "vegetables",
+      "salad",
+    ],
     cuisine: ["Mediterranean"],
     ingredients: [
       "4 cups mixed greens or arugula",
@@ -443,7 +462,7 @@ export const HealthyFood = [
     image: prawn_caesar,
     title: "Prawns Caesar",
     price: 25,
-    characteristic: ["light", "seafood", "shrimp", "vegetables"],
+    characteristic: ["light", "seafood", "shrimp", "vegetables", "salad"],
     cuisine: ["American"],
     ingredients: [
       "2 cups Romaine lettuce, chopped",
@@ -474,7 +493,7 @@ export const HealthyFood = [
     image: potato_salad,
     title: "Potato Salad",
     price: 9.99,
-    characteristic: ["vegeterian", "spicy", "vegetables"],
+    characteristic: ["vegeterian", "spicy", "vegetables", "salad"],
     cuisine: ["American"],
     ingredients: [
       "4 cups baby potatoes or small Yukon Gold potatoes, halved",
@@ -512,6 +531,7 @@ export const HealthyFood = [
       "honey",
       "olives",
       "vegetables",
+      "salad",
     ],
     cuisine: ["Mediterranean"],
     ingredients: [
@@ -553,6 +573,7 @@ export const HealthyFood = [
       "honey",
       "olives",
       "vegetables",
+      "salad",
     ],
     cuisine: ["Mediterranean"],
     ingredients: [
@@ -586,7 +607,7 @@ export const HealthyFood = [
     image: thai_beef_salad,
     title: "Thai Beef Salad",
     price: 21.99,
-    characteristic: ["beef", "olives", "spicy", "vegetables"],
+    characteristic: ["beef", "olives", "spicy", "vegetables", "salad"],
     cuisine: ["Thai"],
     ingredients: [
       "1 pound beef sirloin or flank steak, thinly sliced",
@@ -632,6 +653,7 @@ export const HealthyFood = [
       "honey",
       "olives",
       "vegetables",
+      "salad",
     ],
     cuisine: ["Mediterranean"],
     ingredients: [

@@ -67,6 +67,7 @@ const PromoModal = ({ onRequestClose }) => {
             <p>{promotion.description}</p>
             <CountdownTimer endTime={promotion.endTime} />
             <Link to="/deals">See more amazing deals!</Link>
+            <p>Find your discount in the Cart!</p>
           </PromoContent>
           <PromoImage>
             <Image src={image} alt="promotion" />

@@ -159,6 +159,7 @@ const FastFoodPage = () => {
             key={item.id}
             item={item}
             handleOpenModal={handleOpenModal}
+            price={item.price}
           />
         ))}
       </ListItems>

@@ -155,6 +155,7 @@ const SushiPage = () => {
             key={item.id}
             item={item}
             handleOpenModal={handleOpenModal}
+            price={item.price}
           />
         ))}
       </ListItems>

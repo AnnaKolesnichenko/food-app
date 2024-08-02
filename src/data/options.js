@@ -77,4 +77,5 @@ export const saladIngredients = [
   { value: "spicy", label: "Spicy" },
   { value: "light", label: "Light" },
   { value: "low-calories", label: "Low-calories" },
+  { value: "salad", label: "Salad" },
 ];

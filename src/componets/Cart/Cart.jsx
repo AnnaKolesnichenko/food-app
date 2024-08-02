@@ -16,8 +16,12 @@ const Cart = ({ handleCloseButton, handleCheckOutOpen }) => {
 
   useEffect(() => {
     let total = 0;
+
     items.forEach((item) => {
-      total += item.price * item.quantity;
+      const itemPrice = item.characteristic.includes("salad")
+        ? item.price * 0.9 // Apply 10% discount for salad items
+        : item.price;
+      total += itemPrice * item.quantity;
     });
     setTotalCost(total);
   }, [items]);
