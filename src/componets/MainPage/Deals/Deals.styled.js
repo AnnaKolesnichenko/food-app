@@ -7,9 +7,6 @@ export const DealsContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
-  /* margin-left: -120px;
-  margin-right: -120px; */
   padding: 20px;
   border: 1px solid grey;
   border-radius: 100px;
