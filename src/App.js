@@ -11,6 +11,7 @@ import FavoritesPage from "componets/FavoritesPage/FavoritesPage";
 import PromotionsPage from "componets/PromotionsPage/PromotionsPage";
 import SimplePage from "./componets/SaladsPage/SaladsPage";
 import PromotionRoll from "./componets/PromotionsPage/PromotionRoll";
+import ItemPage from "componets/UI/ItemPage/ItemPage";
 
 //import { useEffect } from "react";
 
@@ -45,6 +46,7 @@ function App() {
           <Route path="/deals" element={<PromotionsPage />}>
             <Route path="bonanza" element={<PromotionRoll />}></Route>
           </Route>
+          {/* <Route path="/item/:id" element={<ItemPage />} /> */}
           <Route path="/favorites" element={<FavoritesPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

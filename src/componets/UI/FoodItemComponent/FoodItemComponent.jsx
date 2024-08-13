@@ -13,6 +13,7 @@ import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { handleLiked } from "store/liked-slice";
 import { addItemToCart } from "store/cart-slice";
+import { Link } from "react-router-dom";
 
 const FoodItem = ({ item, handleOpenModal, price, discountPrice }) => {
   // const cartCnxt = useContext(CartContext);
@@ -38,7 +39,9 @@ const FoodItem = ({ item, handleOpenModal, price, discountPrice }) => {
         visible: { opacity: 1, scale: 1 },
       }}
       style={{ position: "relative" }}
+      onClick={() => console.log(item.id)}
     >
+      {/* <Link to={`/item/${item.id}`}> */}
       <StyledImage
         src={item.image}
         alt={item.title}
@@ -89,6 +92,7 @@ const FoodItem = ({ item, handleOpenModal, price, discountPrice }) => {
           </Button>
         </div>
       </StyledInfo>
+      {/* </Link> */}
     </Item>
   );
 };

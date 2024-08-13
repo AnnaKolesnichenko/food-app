@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { PromoTime } from "./PromModal.styled.js";
 
 const CountdownTimer = ({ endTime }) => {
   const [timeLeft, setTimeLeft] = useState(endTime - Date.now());
@@ -22,7 +23,9 @@ const CountdownTimer = ({ endTime }) => {
 
   return (
     <div>
-      <p>Time left: {formatTime(timeLeft)}</p>
+      <PromoTime>
+        Time left: <span>{formatTime(timeLeft)}</span>
+      </PromoTime>
     </div>
   );
 };

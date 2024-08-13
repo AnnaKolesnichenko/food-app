@@ -1,13 +1,23 @@
 // import Modal from "react-modal";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import CountdownTimer from "./Countdown";
 import { IoClose } from "react-icons/io5";
+import { LiaHandPointerSolid } from "react-icons/lia";
 
 import { Backdrop } from "componets/UI/CommonStyles.styled";
-import { Button, Image, Modal, PromoContent, PromoImage } from "./PromModal";
+import {
+  Button,
+  Image,
+  Modal,
+  PromoAbout,
+  PromoContent,
+  PromoDealsLink,
+  PromoImage,
+  PromoLink,
+  PromoTitle,
+} from "./PromModal.styled";
 import image from "../../../data/deals/s.jpg";
 
 const PromoModal = ({ onRequestClose }) => {
@@ -50,24 +60,50 @@ const PromoModal = ({ onRequestClose }) => {
         <div
           style={{
             width: "100%",
+            height: "100%",
             position: "relative",
-            display: "flex",
-            flexDirection: "row",
           }}
         >
-          {" "}
           <Button onClick={onRequestClose}>
             <IoClose size={30} />
           </Button>
           <PromoContent>
-            <h2>
+            <PromoTitle>
               {promotion.title}
-              <Link to={promiLink[3].link}>{promotion.titleCaption}</Link>
-            </h2>
-            <p>{promotion.description}</p>
+              <PromoLink to={promiLink[3].link}>
+                {promotion.titleCaption}
+              </PromoLink>
+              <LiaHandPointerSolid
+                size={27}
+                fill="coral"
+                style={{
+                  position: "absolute",
+                  top: "20px",
+                  right: "50%",
+                  transform: "rotate(250deg)",
+                }}
+              />
+            </PromoTitle>
+            <PromoAbout>{promotion.description}</PromoAbout>
             <CountdownTimer endTime={promotion.endTime} />
-            <Link to="/deals">See more amazing deals!</Link>
-            <p>Find your discount in the Cart!</p>
+            <div style={{ alignSelf: "flex-end", position: "relative" }}>
+              <LiaHandPointerSolid
+                size={27}
+                fill="#edcf3b"
+                style={{
+                  position: "absolute",
+                  top: "10px",
+                  left: "-30px",
+                  transform: "rotate(50deg)",
+                }}
+              />
+              <PromoDealsLink to="/deals">
+                See more amazing deals!
+              </PromoDealsLink>
+            </div>
+            <PromoAbout style={{ alignSelf: "flex-end" }}>
+              Find your discount in the Cart!
+            </PromoAbout>{" "}
           </PromoContent>
           <PromoImage>
             <Image src={image} alt="promotion" />
